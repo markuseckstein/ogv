@@ -1,8 +1,13 @@
 @charset "utf-8";
 
+/*
+font-family: 'Crete Round', serif;
+font-family: 'Alegreya', serif;
+font-family: 'Patua One', cursive;
+*/
 // Define defaults for each variable.
 
-$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$base-font-family: "Crete Round", Helvetica, Arial, sans-serif !default;
 $base-font-size:   16px !default;
 $base-font-weight: 400 !default;
 $small-font-size:  $base-font-size * 0.875 !default;
@@ -45,5 +50,6 @@ $on-laptop:        800px !default;
 @import
   "minima/base",
   "minima/layout",
-  "minima/syntax-highlighting"
+  "minima/syntax-highlighting",
+  "minima/custom"
 ;

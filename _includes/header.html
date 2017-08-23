@@ -21,7 +21,9 @@
           {% assign sorted_pages = (site.pages | sort:"order") %}
           {% for my_page in sorted_pages %}
             {% if my_page.title %}
+              {% if my_page.hideInMenu != true %}
             <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+              {% endif %}
             {% endif %}
           {% endfor %}
         </div>
