@@ -1,5 +1,5 @@
 <header class="site-header" role="banner">
-
+  <div class="site-header__image"></div>
   <div class="wrapper">
     {% assign default_paths = site.pages | map: "path" %}
     {% assign page_paths = site.header_pages | default: default_paths %}
@@ -22,7 +22,11 @@
           {% for my_page in sorted_pages %}
             {% if my_page.title %}
               {% if my_page.hideInMenu != true %}
-            <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+                {% if my_page.url == page.url %}
+                  <a class="page-link page-link--active" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>          
+                {% else %}
+                  <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+                {% endif %}
               {% endif %}
             {% endif %}
           {% endfor %}
