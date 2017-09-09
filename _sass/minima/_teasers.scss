@@ -1,47 +1,45 @@
 .teaser-image {
-    height: 200px;
+    height: 300px;
     background-size: cover;
 }
 
 .teaser-image--kurzchronik {
-    background-image: url(https://www.reprotec.ch/media/catalog/category/Hiroglyphen_3.jpg);
+    background-image: url(/assets/img/kurzchronik.jpg);
+    background-position: 50% 73%;
 }
 
 .teaser-image--vereinszweck {
-    background-image: url(/assets/img/sunset.jpg);
+    background-image: url(/assets/img/vereinszweck.jpg);
     background-position: 55% 67%;
-    height: 300px;
 }
 
 .teaser-image--geraete {
-    background-image: url(http://www.pflanzenfreunde.com/bilder/gartengeraete.jpg);
+    background-image: url(/assets/img/geraete.jpg);
     background-position: 50% 96%;
-    height: 300px;
 }
 
 .teaser-image--impressum {
-    background-image: url(https://c1.staticflickr.com/8/7568/15743594705_acdbb78acd_b.jpg);
-    background-position: 50% 40%;
+    background-image: url(/assets/img/impressum.jpg);
+    background-position: 55% 67%;
 }
 
 
 .teaser-image--willkommen {
-    background-image: url(https://upload.wikimedia.org/wikipedia/commons/6/62/Garten_Vogtsbauernhof_Schwarzwald.jpg);
-    background-position: 50% 40%;
+    background-image: url(/assets/img/willkommen.jpg);
+    background-position: 50% 27%;
 }
 
 .teaser-image--kontakt {
-    background-image: url(https://www.bundeskanzlerin.de/Content/DE/Leichte_Sprache/Bilder/leichte-sprache-telefon-kontakt-anrufen.jpg?__blob=bpaDownload&amp;v=2);
-    background-position: 50% 40%;
+    background-image: url(/assets/img/kontakt.jpg);
+    background-position: 50% 31%;
 }
 
 .teaser-image--mitgliedschaft {
-    background-image: url(http://www.wohnbau-eg-essen.de/images/headbilder/mitgliedschaft/mitgliedschaft-by-wohnbau-eg-essen.jpg);
-    background-position: 50% 40%;
+    background-image: url(/assets/img/mitgliedschaft.jpg);
+    background-position: 50% 47%;
 }
 
 .teaser-image--veranstaltungen {
-    background-image: url(http://www.kinsau.de/images/vereine/gartenbauverein/03%20Baumschneiden%202013.jpeg);
-    background-position: 50% 60%;
-    height: 300px;
+    background-image: url(/assets/img/veranstaltungen.jpg);
+    background-position: 50% 47%;
 }
