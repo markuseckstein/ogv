@@ -7,12 +7,12 @@
 
 .teaser-image--kurzchronik {
     background-image: url(/assets/img/kurzchronik.jpg?#{$cacheversion});
-    background-position: 50% 73%;
+    background-position: 50% 15%;
 }
 
 .teaser-image--vereinszweck {
     background-image: url(/assets/img/vereinszweck.jpg?#{$cacheversion});
-    background-position: 55% 67%;
+    background-position: 55% 19%;
 }
 
 .teaser-image--geraete {
@@ -43,5 +43,10 @@
 
 .teaser-image--veranstaltungen {
     background-image: url(/assets/img/veranstaltungen.jpg?#{$cacheversion});
-    background-position: 50% 47%;
+    background-position: 50% 38%;
+}
+
+.teaser-image--fotogalerie {
+    background-image: url(/assets/img/fotogalerie.jpg?#{$cacheversion});
+    background-position: 50% 38%;
 }
