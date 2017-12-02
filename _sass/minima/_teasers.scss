@@ -5,6 +5,13 @@
     background-size: cover;
 }
 
+@include media-query($on-palm) {
+    .teaser-image {
+        height: 180px;
+    }
+}
+
+
 .teaser-image--kurzchronik {
     background-image: url(/assets/img/kurzchronik.jpg?#{$cacheversion});
     background-position: 50% 15%;
@@ -17,7 +24,7 @@
 
 .teaser-image--geraete {
     background-image: url(/assets/img/geraete.jpg?#{$cacheversion});
-    background-position: 50% 96%;
+    background-position: 50% 57%;
 }
 
 .teaser-image--impressum {
@@ -33,7 +40,7 @@
 
 .teaser-image--kontakt {
     background-image: url(/assets/img/kontakt.jpg?#{$cacheversion});
-    background-position: 50% 31%;
+    background-position: 50% 23%;
 }
 
 .teaser-image--mitgliedschaft {

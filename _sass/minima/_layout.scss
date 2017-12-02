@@ -24,6 +24,13 @@
   }
 }
 
+@include media-query($on-palm) {
+  .site-title {
+    @include relative-font-size(1.9);
+  }
+}
+
+
 .site-nav {
   float: right;
   line-height: $base-line-height * $base-font-size * 2.25;
