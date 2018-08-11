@@ -1,3 +1,4 @@
 {
-  "prettier.disableLanguages": ["vue", "html"]
+  "prettier.disableLanguages": ["vue", "html"],
+  "editor.formatOnSave": false
 }
