@@ -1,5 +1,5 @@
 FROM ruby:2.6
-RUN apt-get update -qq && apt-get install -y nodejs default-jre
+RUN apt-get update -qq && apt-get install -y nodejs default-jre ruby-full build-essential
 
 # Set default locale for the environment
 ENV LC_ALL C.UTF-8
