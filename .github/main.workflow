@@ -1,8 +1,13 @@
 workflow "Deploy" {
   on = "push"
-  resolves = ["new-action"]
+  resolves = ["FTP Deploy Action"]
 }
 
-action "new-action" {
-  uses = "owner/repo/path@ref"
+action "Build Jekyll" {
+  uses = "./actions/jekyll"
+}
+
+action "FTP Deploy Action" {
+  uses = "./actions/ftp-deploy"
+  needs = ["Build Jekyll"]
 }
