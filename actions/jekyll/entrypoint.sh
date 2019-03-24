@@ -8,3 +8,6 @@ echo '👍 BUNDLE INSTALLED—BUILDING THE SITE'
 bundle exec jekyll build
 echo '👍 THE SITE IS BUILT'
 
+ls -la
+
+ls -la _site

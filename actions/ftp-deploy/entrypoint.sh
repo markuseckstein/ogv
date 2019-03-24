@@ -3,6 +3,12 @@
 # "to avoid continuing when errors or undefined variables are present"
 set -eu
 
+
+ls -la
+
+ls -la _site
+
+
 echo "Starting FTP Deploy"
 echo "Uploading files..."
 
