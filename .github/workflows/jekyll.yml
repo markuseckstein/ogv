@@ -26,4 +26,5 @@ jobs:
         FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
         FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         LOCAL_DIR: _site
-        ARGS: --delete
+        REMOTE_DIR: public_html
+        ARGS: --delete --verbose
