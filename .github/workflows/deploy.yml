@@ -1,0 +1,29 @@
+name: Build and Publish OGV Website
+on: [push]
+
+jobs:
+  build-and-deploy:
+    name: Build and deploy
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 16
+    - name: Install deps
+      run: npm ci
+    - name: Build site
+      run: npm run build
+    - name: List output files 1
+      run: ls -la
+    - name: List output files 2
+      run: ls -la public
+    - name: FTP-Deploy
+      uses: SamKirkland/FTP-Deploy-Action@2.0.0
+      env:
+        FTP_SERVER: ${{ secrets.FTP_SERVER }}
+        FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+        FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        LOCAL_DIR: public
+        REMOTE_DIR: public_html
+        ARGS: --delete --verbose

@@ -1,0 +1,55 @@
+.teaser-image {
+  height: 300px;
+  background-size: cover;
+}
+
+@include media-query($on-palm) {
+  .teaser-image {
+    height: 180px;
+  }
+}
+
+.teaser-image--kurzchronik {
+  background-image: url(/assets/img/kurzchronik.jpg?#{$cacheversion});
+  background-position: 50% 15%;
+}
+
+.teaser-image--vereinszweck {
+  background-image: url(/assets/img/vereinszweck.jpg?#{$cacheversion});
+  background-position: 55% 19%;
+}
+
+.teaser-image--geraete {
+  background-image: url(/assets/img/geraete.jpg?#{$cacheversion});
+  background-position: 50% 57%;
+}
+
+.teaser-image--impressum {
+  background-image: url(/assets/img/impressum.jpg?#{$cacheversion});
+  background-position: 55% 67%;
+}
+
+.teaser-image--willkommen {
+  background-image: url(/assets/img/willkommen.jpg?#{$cacheversion});
+  background-position: 50% 27%;
+}
+
+.teaser-image--kontakt {
+  background-image: url(/assets/img/kontakt03.jpg?#{$cacheversion});
+  background-position: 50% 30%;
+}
+
+.teaser-image--mitgliedschaft {
+  background-image: url(/assets/img/mitgliedschaft.jpg?#{$cacheversion});
+  background-position: 50% 47%;
+}
+
+.teaser-image--veranstaltungen {
+  background-image: url(/assets/img/veranstaltungen.jpg?#{$cacheversion});
+  background-position: 50% 38%;
+}
+
+.teaser-image--fotogalerie {
+  background-image: url(/assets/img/fotogalerie.jpg?#{$cacheversion});
+  background-position: 50% 38%;
+}
