@@ -1,47 +1,60 @@
-import { graphql, PageProps } from "gatsby"
-import { IGatsbyImageData } from "gatsby-plugin-image"
-import * as React from "react"
-import Layout from "../components/layout"
-
-
-
+import { graphql, PageProps } from "gatsby";
+import { IGatsbyImageData } from "gatsby-plugin-image";
+import * as React from "react";
+import Layout from "../components/layout";
 
 // markup
 const ImpressumPage = ({ data }: PageProps<DataProps>) => {
   return (
-    <Layout teaserImage={data.file.childImageSharp.gatsbyImageData} teaserPosition="55% 67%" teaserAltText="Willkommen beim Obst- und Gartenbauverein Pattenhofen Altenthann e.V." backgroundColor={data.file.colors.lightMuted}>
-
+    <Layout
+      teaserImage={data.file.childImageSharp.gatsbyImageData}
+      teaserPosition="55% 67%"
+      teaserAltText="Willkommen beim Obst- und Gartenbauverein Pattenhofen Altenthann e.V."
+      backgroundColor={data.file.colors.lightMuted}
+    >
       <h1>Impressum</h1>
 
-      <p>
-        Verantwortlich:
-      </p>
+      <p>Verantwortlich:</p>
 
       <p>
-        Günter Blos<br />
-        Ochenbrucker Straße 6<br />
-        90592 Schwarzenbruck<br />
+        Thomas Schmid
+        <br />
+        Pattenhofener Str. 18
+        <br />
+        90592 Schwarzenbruck
+        <br />
       </p>
 
       <h3>Links</h3>
-      <a href="http://www.kv-gartenbau-nl.de/" target="_blank" rel="noopener">Kreisverband Nürnberger Land</a><br />
-      <a href="http://www.gartenbauvereine.org/" target="_blank" rel="noopener">Landesverband Bayern</a>
+      <a href="http://www.kv-gartenbau-nl.de/" target="_blank" rel="noopener">
+        Kreisverband Nürnberger Land
+      </a>
+      <br />
+      <a href="http://www.gartenbauvereine.org/" target="_blank" rel="noopener">
+        Landesverband Bayern
+      </a>
     </Layout>
-  )
-}
+  );
+};
 
-export default ImpressumPage
+export default ImpressumPage;
 
 export const query = graphql`
-query {
-  file(relativePath: { eq: "impressum.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(layout: FULL_WIDTH)
-    },
-    colors {
-      ...GatsbyImageColors
+  query {
+    file(relativePath: { eq: "impressum.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
+      colors {
+        ...GatsbyImageColors
+      }
+    }
   }
-  }
-}`
+`;
 
-type DataProps = { file: { childImageSharp: { gatsbyImageData: IGatsbyImageData }, colors: { lightMuted: string } } };
+type DataProps = {
+  file: {
+    childImageSharp: { gatsbyImageData: IGatsbyImageData };
+    colors: { lightMuted: string };
+  };
+};

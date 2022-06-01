@@ -80,17 +80,17 @@
       padding-top: 10px;
       text-align: center;
 
-      >svg path {
+      > svg path {
         fill: $grey-color-dark;
       }
     }
 
-    input~.trigger {
+    input ~ .trigger {
       clear: both;
       display: none;
     }
 
-    input:checked~.trigger {
+    input:checked ~ .trigger {
       display: block;
       padding-bottom: 5px;
     }
@@ -107,10 +107,6 @@
     }
   }
 }
-
-
-
-
 
 /**
  * Site footer
@@ -165,7 +161,6 @@
 }
 
 @include media-query($on-laptop) {
-
   .footer-col-1,
   .footer-col-2 {
     width: -webkit-calc(50% - (#{$spacing-unit} / 2));
@@ -186,8 +181,6 @@
   }
 }
 
-
-
 /**
  * Page content
  */
@@ -203,7 +196,7 @@
   margin-left: 0;
   list-style: none;
 
-  >li {
+  > li {
     margin-bottom: $spacing-unit;
   }
 }
@@ -217,8 +210,6 @@
   display: block;
   @include relative-font-size(1.5);
 }
-
-
 
 /**
  * Posts

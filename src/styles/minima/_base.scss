@@ -21,13 +21,12 @@ figure {
   padding: 0;
 }
 
-
-
 /**
  * Basic styling
  */
 body {
-  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+  font: $base-font-weight #{$base-font-size}/#{$base-line-height}
+    $base-font-family;
   color: $text-color;
   background-color: $background-color;
   -webkit-text-size-adjust: 100%;
@@ -37,8 +36,6 @@ body {
   font-feature-settings: "kern" 1;
   font-kerning: normal;
 }
-
-
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm
@@ -60,10 +57,6 @@ figure,
   margin-bottom: calc($spacing-unit / 2);
 }
 
-
-
-
-
 /**
  * Images
  */
@@ -72,20 +65,16 @@ img {
   vertical-align: middle;
 }
 
-
-
 /**
  * Figures
  */
-figure>img {
+figure > img {
   display: block;
 }
 
 figcaption {
   font-size: $small-font-size;
 }
-
-
 
 /**
  * Lists
@@ -96,14 +85,11 @@ ol {
 }
 
 li {
-
-  >ul,
-  >ol {
+  > ul,
+  > ol {
     margin-bottom: 0;
   }
 }
-
-
 
 /**
  * Headings
@@ -116,8 +102,6 @@ h5,
 h6 {
   font-weight: $base-font-weight;
 }
-
-
 
 /**
  * Links
@@ -144,7 +128,6 @@ a {
   }
 }
 
-
 /**
  * Blockquotes
  */
@@ -160,8 +143,6 @@ blockquote {
     margin-bottom: 0;
   }
 }
-
-
 
 /**
  * Code formatting
@@ -182,14 +163,12 @@ pre {
   padding: 8px 12px;
   overflow-x: auto;
 
-  >code {
+  > code {
     border: 0;
     padding-right: 0;
     padding-left: 0;
   }
 }
-
-
 
 /**
  * Wrapper
@@ -215,8 +194,6 @@ pre {
   }
 }
 
-
-
 /**
  * Clearfix
  */
@@ -226,12 +203,10 @@ pre {
   clear: both;
 }
 
-
-
 /**
  * Icons
  */
-.icon>svg {
+.icon > svg {
   display: inline-block;
   vertical-align: middle;
 
@@ -245,7 +220,7 @@ pre {
     padding-right: 5px;
   }
 
-  li+li {
+  li + li {
     padding-top: 5px;
   }
 }
