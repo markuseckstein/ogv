@@ -11,7 +11,7 @@ jobs:
       with:
         node-version: 16
     - name: Install deps
-      run: npm ci
+      run: npm ci --legacy-peer-deps
     - name: Build site
       run: npm run build
     - name: List output files 1
