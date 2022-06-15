@@ -35,7 +35,7 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
               25.06.2022
             </td>
             <td>
-              Sommerschnittkurs 14:00 Uhr. Treffpunkt wird noch bekannt gegeben.
+              Sommerschnittkurs 14:00 Uhr. Treffpunkt Altdorfer Straße, Ortsausgang.
             </td>
           </tr>
           <tr>
