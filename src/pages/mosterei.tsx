@@ -50,7 +50,7 @@ const MostereiPage = ({ data }: PageProps<DataProps>) => {
   );
 };
 
-export default GeraeteMostereiPage;
+export default MostereiPage;
 
 export const query = graphql`
   query {
