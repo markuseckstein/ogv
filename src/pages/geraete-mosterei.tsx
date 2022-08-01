@@ -95,7 +95,7 @@ const GeraeteMostereiPage = ({ data }: PageProps<DataProps>) => {
       <p>Schutzmaske und Mindestabstand 1,5 m sind Vorschrift.</p>
 
       <h4>Mosttermine 2022</h4>
-      <p>Die Termine für 2022stehen noch nicht fest.</p>
+      <p>Die Termine für 2022 stehen noch nicht fest.</p>
     </Layout>
   );
 };
