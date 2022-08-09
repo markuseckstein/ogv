@@ -1,0 +1,21 @@
+name: Build OGV Website on PR
+on: [pull_request]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 16
+    - name: Install deps
+      run: npm ci --legacy-peer-deps
+    - name: Build site
+      run: npm run build
+    - name: List output files 1
+      run: ls -la
+    - name: List output files 2
+      run: ls -la public
+    
