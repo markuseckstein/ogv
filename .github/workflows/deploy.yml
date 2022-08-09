@@ -1,5 +1,7 @@
 name: Build and Publish OGV Website
-on: [push]
+on:
+  push:
+    branches: [ master ]
 
 jobs:
   build-and-deploy:
