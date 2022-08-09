@@ -53,6 +53,22 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
           </tr>
           <tr>
             <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
+              27.08.2022
+            </td>
+            <td>
+              Obstbaumversteigerung, 14 Uhr. Treffpunkt am Weiher.
+            </td>
+          </tr>
+          <tr>
+            <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
+              03.09.2022
+            </td>
+            <td>
+              Arbeitseinsatz Kreislehrgarten. Treffpunkt 9 Uhr am alten Feuerwehrhaus.
+            </td>
+          </tr>
+          <tr>
+            <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
               16.10.2022
             </td>
             <td>Herbstwanderung. Programm wird noch bekannt gegeben.</td>
