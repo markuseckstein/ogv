@@ -21,7 +21,7 @@ jobs:
     - name: List output files 2
       run: ls -la public
     - name: FTP-Deploy
-      uses: SamKirkland/FTP-Deploy-Action@2.0.0
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
       env:
         FTP_SERVER: ${{ secrets.FTP_SERVER }}
         FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
