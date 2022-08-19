@@ -59,6 +59,7 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
           .
         </p>
       </aside> */}
+      
     </Layout>
   );
 };
