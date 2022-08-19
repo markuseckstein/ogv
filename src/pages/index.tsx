@@ -42,7 +42,7 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
         loading="eager"
       />
 
-      <aside
+      {/* <aside
         style={{
           marginTop: "50px",
           backgroundColor: "lightgray",
@@ -58,7 +58,7 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
           </a>
           .
         </p>
-      </aside>
+      </aside> */}
     </Layout>
   );
 };
