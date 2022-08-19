@@ -28,7 +28,7 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: public/
         server-dir: public_html/
-        dry-run: true
+        dry-run: false
         dangerous-clean-slate: true
         exclude: |
           **/.git*
