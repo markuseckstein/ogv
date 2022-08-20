@@ -16,20 +16,13 @@ jobs:
       run: npm ci --legacy-peer-deps
     - name: Build site
       run: npm run build
-    - name: List output files 1
-      run: ls -la
-    - name: List output files 2
+    - name: List output files
       run: ls -la public
     - name: FTP-Deploy
-      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      uses: sebastianpopp/ftp-action@releases/v2
       with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
+        host: ${{ secrets.FTP_SERVER }}
+        user: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: public/
-        server-dir: public_html/
-        dry-run: false
-        exclude: |
-          **/.git*
-          **/.git*/**
-          **/node_modules/**
+        localDir: "public"
+        remoteDir: "public_html"
