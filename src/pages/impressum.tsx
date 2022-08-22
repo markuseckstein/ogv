@@ -1,4 +1,4 @@
-import { graphql, PageProps } from "gatsby";
+import { graphql, Link, PageProps } from "gatsby";
 import { IGatsbyImageData } from "gatsby-plugin-image";
 import * as React from "react";
 import Layout from "../components/layout";
@@ -33,6 +33,12 @@ const ImpressumPage = ({ data }: PageProps<DataProps>) => {
       <a href="http://www.gartenbauvereine.org/" target="_blank" rel="noopener">
         Landesverband Bayern
       </a>
+      <br />
+      <br />
+      <h3>Datenschutz</h3>
+      <p>
+        <Link to="/datenschutz">Unsere Datenschutzerklärung</Link>
+      </p>
     </Layout>
   );
 };

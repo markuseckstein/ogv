@@ -24,6 +24,11 @@
   background-position: 50% 57%;
 }
 
+.teaser-image--mosterei {
+  background-image: url(/assets/img/mosterei.jpg?#{$cacheversion});
+  background-position: 50% 57%;
+}
+
 .teaser-image--impressum {
   background-image: url(/assets/img/impressum.jpg?#{$cacheversion});
   background-position: 55% 67%;

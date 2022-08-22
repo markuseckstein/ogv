@@ -1,5 +1,5 @@
 import { graphql, PageProps } from "gatsby";
-import { IGatsbyImageData, StaticImage } from "gatsby-plugin-image";
+import { IGatsbyImageData } from "gatsby-plugin-image";
 import React from "react";
 import Layout from "../components/layout";
 
@@ -19,14 +19,21 @@ const MostereiPage = ({ data }: PageProps<DataProps>) => {
       </p>
       <h4 style={{ color: "red" }}>Wichtige Hinweise!</h4>
       <p>
-        Wegen Corona-Auflagen sind beim Mostbetrieb 2022 Einschänkungen
-        notwendig:
+        Der Mostbetrieb wird unter den zum Zeitpunkt geltenden COVID Auflagen
+        durchgeführt.
       </p>
+
       <p>
-        Es können <strong>nur Mitglieder</strong> des Vereins für Gartenbau und
-        Landespflege Pattenhofen-Altenthann angenommen werden.
+        Wir füllen in Beutel und in Ihre eigenen Flaschen ab. Wir empfehlen aus
+        hygienischen und Effizienz-Gründen die Abfüllung in Beutel (3, 5, 10
+        Liter, bei uns erhältlich).
       </p>
-      <p>Es werden nur Beutel (3, 5 oder 10 Liter) abgefüllt.</p>
+      <p>Für die Abfüllung in Ihre eigenen Flaschen achten Sie bitte auf</p>
+      <ul>
+        <li>saubere Flaschen</li>
+        <li>dichte Verschlüsse</li>
+        <li>sinnvolle Größen</li>
+      </ul>
       <p>
         Das angelieferte Obst soll in Säcken oder Kisten mit{" "}
         <strong>max. 25 kg Gesamtgewicht</strong> angeliefert werden.
@@ -35,15 +42,23 @@ const MostereiPage = ({ data }: PageProps<DataProps>) => {
         Von Mostkunden dürfen sich nur 2 Personen als Helfer im Mosthaus
         aufhalten.
       </p>
-      <p>Schutzmaske und Mindestabstand 1,5 m sind Vorschrift.</p>
 
-      <h4>Mosttermine 2022</h4>
+      <h2>Mosttermine 2022</h2>
       <p>Die Termine für 2022 sind</p>
-      <ol>
-        <li>Tag 1</li>
-        <li>Tag 2</li>
-        <li>Tag 3</li>
-      </ol>
+      <ul>
+        <li>Freitag, 16. September</li>
+        <li>Samstag, 17. September</li>
+        <li>Freitag, 23. September</li>
+        <li>Samstag, 24. September</li>
+        <li>Freitag, 30. September</li>
+        <li>Samstag, 01. Oktober</li>
+        <li>Freitag, 07. Oktober</li>
+        <li>Samstag, 08. Oktober</li>
+        <li>Freitag, 14. Oktober</li>
+        <li>Samstag, 15. Oktober</li>
+        <li>Freitag, 21. Oktober</li>
+        <li>Samstag, 22. Oktober</li>
+      </ul>
       <p>
         Sie können hier eine Terminanfrage stellen. Wir werden uns dann so
         schnell wie möglich telefonisch bei Ihnen zur genauen Terminabsprache
@@ -53,9 +68,9 @@ const MostereiPage = ({ data }: PageProps<DataProps>) => {
         src="https://docs.google.com/forms/d/e/1FAIpQLSdBFKKI-loeuCRLt-9a2uKvjV6TLFwBzyg9DMQFcv2g_qWASw/viewform?embedded=true"
         style={{ width: "100%" }}
         height="2287"
-        frameborder="0"
-        marginheight="0"
-        marginwidth="0"
+        frameBorder={0}
+        marginHeight={0}
+        marginWidth={0}
       >
         Wird geladen…
       </iframe>
@@ -67,7 +82,7 @@ export default MostereiPage;
 
 export const query = graphql`
   query {
-    file(relativePath: { eq: "geraete.jpg" }) {
+    file(relativePath: { eq: "mosterei.jpg" }) {
       childImageSharp {
         gatsbyImageData(layout: FULL_WIDTH)
       }

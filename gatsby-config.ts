@@ -7,7 +7,8 @@ const config: GatsbyConfig = {
     menuLinks: [
       { name: 'Vereinszweck', link: '/vereinszweck'},
       { name: 'Kurzchronik', link: '/chronik'},
-      { name: 'Geräte und Mosterei', link: '/geraete-mosterei'},
+      { name: 'Geräte', link: '/geraete'},
+      { name: 'Mosterei', link: '/mosterei'},
       { name: 'Veranstaltungen', link: '/veranstaltungen'},
       { name: 'Mitgliedschaft', link: '/mitgliedschaft'},
       { name: 'Kontakt', link: '/kontakt'},
@@ -15,7 +16,7 @@ const config: GatsbyConfig = {
       { name: 'Fotogalerie', link: '/fotogalerie'},
     ]
   },
-  plugins: ["gatsby-plugin-sass", "gatsby-plugin-image", "gatsby-plugin-extract-image-colors", "gatsby-plugin-react-helmet", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
+  plugins: ["gatsby-plugin-sass", "gatsby-plugin-image", "gatsby-plugin-extract-image-colors", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
     resolve: 'gatsby-source-filesystem',
     options: {
       "name": "images",

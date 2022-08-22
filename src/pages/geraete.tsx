@@ -1,4 +1,4 @@
-import { graphql, PageProps } from "gatsby";
+import { graphql, Link, PageProps } from "gatsby";
 import { IGatsbyImageData, StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import Layout from "../components/layout";
@@ -8,10 +8,10 @@ const GeraeteMostereiPage = ({ data }: PageProps<DataProps>) => {
     <Layout
       teaserImage={data.file.childImageSharp.gatsbyImageData}
       teaserPosition="50% 57%"
-      teaserAltText="Geräte und Mosterei"
+      teaserAltText="Geräte"
       backgroundColor={data.file.colors.lightMuted}
     >
-      <h1>Geräte und Mosterei</h1>
+      <h1>Geräte</h1>
       <p>
         Den Vereinsmitgliedern stehen auf Leihbasis nachstehende Geräte zur
         Verfügung.
@@ -71,31 +71,9 @@ const GeraeteMostereiPage = ({ data }: PageProps<DataProps>) => {
 
       <h3>Mosterei</h3>
       <p>
-        In unserer Mosterei können die eigenen Äpfel zu Apfelsaft oder Most
-        verarbeitet werden.
+        In unserer <Link to="/mosterei">Mosterei</Link> können die eigenen Äpfel
+        zu Apfelsaft oder Most verarbeitet werden.
       </p>
-      <h4 style={{ color: "red" }}>Wichtige Hinweise!</h4>
-      <p>
-        Wegen Corona-Auflagen sind beim Mostbetrieb 2021 Einschänkungen
-        notwendig:
-      </p>
-      <p>
-        Es können <strong>nur Mitglieder</strong> des Vereins für Gartenbau und
-        Landespflege Pattenhofen-Altenthann angenommen werden.
-      </p>
-      <p>Es werden nur Beutel (3, 5 oder 10 Liter) abgefüllt.</p>
-      <p>
-        Das angelieferte Obst soll in Säcken oder Kisten mit{" "}
-        <strong>max. 25 kg Gesamtgewicht</strong> angeliefert werden.
-      </p>
-      <p>
-        Von Mostkunden dürfen sich nur 2 Personen als Helfer im Mosthaus
-        aufhalten.
-      </p>
-      <p>Schutzmaske und Mindestabstand 1,5 m sind Vorschrift.</p>
-
-      <h4>Mosttermine 2022</h4>
-      <p>Die Termine für 2022 stehen noch nicht fest.</p>
     </Layout>
   );
 };

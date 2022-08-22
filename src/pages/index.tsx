@@ -1,4 +1,4 @@
-import { graphql, PageProps } from "gatsby";
+import { graphql, Link, PageProps } from "gatsby";
 import { IGatsbyImageData, StaticImage } from "gatsby-plugin-image";
 import * as React from "react";
 import Layout from "../components/layout";
@@ -42,23 +42,20 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
         loading="eager"
       />
 
-      {/* <aside
+      <aside
         style={{
           marginTop: "50px",
-          backgroundColor: "lightgray",
+          backgroundColor: "#DFFCD6",
           borderRadius: "5px",
           padding: "10px",
         }}
       >
-        <h2>Veranstaltungs&shy;hinweis</h2>
+        <h2>Hinweis Mostsaison 2022</h2>
         <p>
-          Am 26. Juni 2022 ist{" "}
-          <a href={tagDerGartentuer} target="_blank" rel="noopener">
-            Tag der offenen Gartentür
-          </a>
+          Mosttermine können Sie <Link to="/mosterei">hier</Link> anfragen.
           .
         </p>
-      </aside> */}
+      </aside>
     </Layout>
   );
 };
