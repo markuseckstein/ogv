@@ -3,6 +3,12 @@ import { IGatsbyImageData } from "gatsby-plugin-image";
 import React from "react";
 import Layout from "../components/layout";
 
+const cellStyle: React.CSSProperties = {
+  textAlign: "center",
+  paddingLeft: "10px",
+  paddingRight: "10px",
+};
+
 const MostereiPage = ({ data }: PageProps<DataProps>) => {
   return (
     <Layout
@@ -42,6 +48,60 @@ const MostereiPage = ({ data }: PageProps<DataProps>) => {
         Von Mostkunden dürfen sich nur 2 Personen als Helfer im Mosthaus
         aufhalten.
       </p>
+      <h2>Mostpreise</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th style={cellStyle}>Preise für</th>
+            <th>Mitglieder</th>
+            <th>Nicht-Mitglieder</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Most</td>
+            <td style={cellStyle}>18 €</td>
+            <td style={cellStyle}>22 €</td>
+          </tr>
+          <tr>
+            <td>Sauermost</td>
+            <td style={cellStyle}>9 €</td>
+            <td style={cellStyle}>13 €</td>
+          </tr>
+          <tr>
+            <td>Beutel 3 Liter</td>
+            <td style={cellStyle} colSpan={2}>
+              1,50 €
+            </td>
+          </tr>
+          <tr>
+            <td>Beutel 5 Liter</td>
+            <td style={cellStyle} colSpan={2}>
+              1,90 €
+            </td>
+          </tr>
+          <tr>
+            <td>Beutel 10 Liter</td>
+            <td style={cellStyle} colSpan={2}>
+              2,50 €
+            </td>
+          </tr>
+          <tr>
+            <td>Box 5 Liter</td>
+            <td style={cellStyle} colSpan={2}>
+              3,00 €
+            </td>
+          </tr>
+          <tr>
+            <td>Box 10 Liter</td>
+            <td style={cellStyle} colSpan={2}>
+              5,00 €
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
 
       <h2>Mosttermine 2022</h2>
       <p>Die Termine für 2022 sind</p>

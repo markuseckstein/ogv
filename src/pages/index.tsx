@@ -52,8 +52,7 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
       >
         <h2>Hinweis Mostsaison 2022</h2>
         <p>
-          Mosttermine können Sie <Link to="/mosterei">hier</Link> anfragen.
-          .
+          Mosttermine können Sie <Link to="/mosterei">hier</Link> anfragen. .
         </p>
       </aside>
     </Layout>
