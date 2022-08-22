@@ -115,50 +115,7 @@ const DatenschutzPage = ({ data }: PageProps<DataProps>) => {
         Einzelne Funktionen unserer Website können unter Umständen nicht richtig
         funktionieren, wenn die Verwendung von Cookies desaktiviert ist.
       </p>
-      <p>
-        <strong>Skalierbares Zentrales Messverfahren</strong>
-      </p>
-      <p>
-        Dieses Verfahren erhebt anonyme Messwerte. Die SZM- Reichweitenmessung
-        verwendet zur Wiedererkennung von Computersystemen entweder einen Cookie
-        mit der Kennung „ioam.de“, „ivwbox.de“, ein LocalStorage Objekt oder
-        eine Signatur, die aus verschiedenen übertragenen Informationen Ihres
-        Web-Browsers erstellt wird. IP-Adressen werden in anonymisierter Form
-        genutzt.
-      </p>
-      <p>
-        Bei der Reichweitenmessung wird der Datenschutz stets berücksichtigt.
-        Diese ermittelt statistisch die Nutzungsintensität und die Zahl der
-        Nutzer einer Website. Dabei werden einzelne Nutzer nicht erkannt, die
-        Identität bleibt stets geschützt. Das System versendet keine Werbung.
-      </p>
-      <p>
-        Web-Angebote, die zur Informationsgemeinschaft zur Feststellung der
-        Verbreitung von Werbeträgern e.V. (IVW – http://www.ivw.eu) gehören oder
-        an der Studie „internet facts“ der Arbeitsgemeinschaft Online-Forschung
-        e.V. (AGOF – www.agof.de) teilnehmen, werden die Nutzungsstatistiken
-        monatlich von der AGOF und der Arbeitsgemeinschaft Media-Analyse e.V.
-        (ag.ma – www.agma-mmc.de), sowie der IVW veröffentlicht und können unter
-        http://www.agof.de, http://www.agma-mmc.de und http://www.ivw.eu
-        eingesehen werden,{" "}
-        <a href="https://www.link-katalog.de/" target="_blank">
-          link
-        </a>
-        . die IVW überprüft das SZM-Verfahren regelmäßig im Hinblick auf eine
-        regel- und datenschutzkonforme Nutzung, außerdem werden die Messdaten
-        veröffentlicht.
-      </p>
-      <p>
-        Die Website der INFOnline GmbH https://www.infonline.de), die
-        Datenschutzwebsite der AGOF (http://www.agof.de/datenschutz) und die
-        Datenschutzwebsite der IVW (http://www.ivw.eu) bieten detaillierte
-        Informationen zum SZM-Verfahren.
-      </p>
-      <p>
-        Sollten Sie der Datenverarbeitung durch das SZM nicht entsprechen,
-        können Sie dies unter den folgenden Links kundtun: http://optout.ioam.de
-        und http://optout.ivwbox.de
-      </p>
+
       <p>
         <strong>
           Auskunft, Berichtigung, Sperre, Löschung und Widerspruch
