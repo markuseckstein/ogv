@@ -12,7 +12,7 @@ const MostereiPage = ({ data }: PageProps<DataProps>) => {
       backgroundColor={data.file.colors.lightMuted}
     >
       <h1>Mosterei</h1>
-      
+
       <p>
         In unserer Mosterei können die eigenen Äpfel zu Apfelsaft oder Most
         verarbeitet werden.
@@ -44,8 +44,21 @@ const MostereiPage = ({ data }: PageProps<DataProps>) => {
         <li>Tag 2</li>
         <li>Tag 3</li>
       </ol>
-      <p>Sie können hier eine Terminanfrage stellen. Wir werden uns dann so schnell wie möglich telefonisch bei Ihnen zur genauen Terminabsprache melden.</p>
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdBFKKI-loeuCRLt-9a2uKvjV6TLFwBzyg9DMQFcv2g_qWASw/viewform?embedded=true" style={{width: '100%'}} height="2287" frameborder="0" marginheight="0" marginwidth="0">Wird geladen…</iframe>
+      <p>
+        Sie können hier eine Terminanfrage stellen. Wir werden uns dann so
+        schnell wie möglich telefonisch bei Ihnen zur genauen Terminabsprache
+        melden.
+      </p>
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdBFKKI-loeuCRLt-9a2uKvjV6TLFwBzyg9DMQFcv2g_qWASw/viewform?embedded=true"
+        style={{ width: "100%" }}
+        height="2287"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+      >
+        Wird geladen…
+      </iframe>
     </Layout>
   );
 };

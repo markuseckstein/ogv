@@ -35,7 +35,8 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
               25.06.2022
             </td>
             <td>
-              Sommerschnittkurs 14:00 Uhr. Treffpunkt Altdorfer Straße, Ortsausgang.
+              Sommerschnittkurs 14:00 Uhr. Treffpunkt Altdorfer Straße,
+              Ortsausgang.
             </td>
           </tr>
           <tr>
@@ -55,16 +56,15 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
             <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
               27.08.2022
             </td>
-            <td>
-              Obstbaumversteigerung, 14 Uhr. Treffpunkt am Weiher.
-            </td>
+            <td>Obstbaumversteigerung, 14 Uhr. Treffpunkt am Weiher.</td>
           </tr>
           <tr>
             <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
               03.09.2022
             </td>
             <td>
-              Arbeitseinsatz Kreislehrgarten. Treffpunkt 9 Uhr am alten Feuerwehrhaus.
+              Arbeitseinsatz Kreislehrgarten. Treffpunkt 9 Uhr am alten
+              Feuerwehrhaus.
             </td>
           </tr>
           <tr>

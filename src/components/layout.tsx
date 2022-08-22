@@ -1,18 +1,8 @@
+import { graphql, Link, StaticQuery } from "gatsby";
+import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 import * as React from "react";
-import {
-  graphql,
-  Link,
-  PageProps,
-  StaticQuery,
-  StaticQueryProps,
-} from "gatsby";
 import "../styles/main.scss";
 import "./layout.scss";
-import {
-  GatsbyImage,
-  IGatsbyImageData,
-  StaticImage,
-} from "gatsby-plugin-image";
 
 const query = graphql`
   query {
