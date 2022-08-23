@@ -35,7 +35,7 @@ const Layout: React.FC<{
   teaserImage,
   teaserPosition,
   teaserAltText = "Teaser Bild",
-  backgroundColor,
+  
 }) => {
   const year = new Date().getFullYear();
   return (
@@ -113,3 +113,4 @@ const Layout: React.FC<{
 };
 
 export default Layout;
+
