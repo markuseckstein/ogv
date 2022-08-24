@@ -24,7 +24,7 @@ const KontaktPage = ({ data }: PageProps<DataProps>) => {
             <br />
             90592 Schwarzenbruck
             <br />
-            <a href="tel:+49-9183-1707">Tel. 09183 / 1052</a>
+            <a href="tel:+49-9183-1052">Tel. 09183 / 1052</a>
             <br />
             <a href="mailto:thomas.schmid@ogv-altenthann-pattenhofen.de">
               thomas.schmid@ogv-altenthann-pattenhofen.de
