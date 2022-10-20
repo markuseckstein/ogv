@@ -119,8 +119,10 @@ const MostereiPage = ({ data }: PageProps<DataProps>) => {
         <li>Freitag, 21. Oktober</li>
         <li>Samstag, 22. Oktober</li>
       </ul>
-      
-      <h2>Terminanfrage</h2>
+
+      <p>Alle Termine für 2022 sind bereits ausgebucht.</p>
+
+      {/* <h2>Terminanfrage</h2>
       <p>
         Sie können hier eine Terminanfrage stellen. Wir werden uns dann so
         schnell wie möglich telefonisch bei Ihnen zur genauen Terminabsprache
@@ -135,7 +137,7 @@ const MostereiPage = ({ data }: PageProps<DataProps>) => {
         marginWidth={0}
       >
         Wird geladen…
-      </iframe>
+        </iframe> */}
     </Layout>
   );
 };
