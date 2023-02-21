@@ -3,7 +3,6 @@ import { IGatsbyImageData } from "gatsby-plugin-image";
 
 import React from "react";
 import Layout from "../components/layout";
-import tagDerGartentuer from "../download/Flyer_offene_Gartentuer_2022.pdf";
 
 const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
   return (
@@ -13,66 +12,52 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
       teaserAltText="Willkommen beim Obst- und Gartenbauverein Pattenhofen Altenthann e.V."
       backgroundColor={data.file.colors.lightMuted}
     >
-      <h1>Jahresprogramm 2022</h1>
+      <h1>Jahresprogramm 2023</h1>
       <p>
         <table>
           <tr>
             <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
-              22.04.2022
+              17.03.2023
             </td>
             <td>
-              Jahreshauptversammlung 19:00 Uhr im Gasthaus "Weisses Kreuz".
+              Jahreshauptversammlung 19:30 Uhr im Gasthaus "Weisses Kreuz".
             </td>
           </tr>
           <tr>
             <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
-              07.05.2022
+              31.03.2023
             </td>
-            <td>Blumenabend 19:30 Uhr im Gasthaus "Weisses Kreuz".</td>
+            <td>Ortsrandsäuberung 17:00 Uhr, Treffpunkt am Dorfweiher.</td>
           </tr>
           <tr>
             <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
-              25.06.2022
+              13.05.2023
+            </td>
+            <td>Blumenabend 19:00 Uhr im Gasthaus "Weisses Kreuz".</td>
+          </tr>
+          <tr>
+            <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
+              02.07.2023
             </td>
             <td>
-              Sommerschnittkurs 14:00 Uhr. Treffpunkt Altdorfer Straße,
-              Ortsausgang.
+              Ausflug zum Botanischen Garten in Erlangen. Genauere Informationen werden noch bekannt gegeben.
             </td>
           </tr>
           <tr>
             <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
-              26.06.2022
+              08.07.2023
             </td>
             <td>
-              Tag der offenen Gartentür. 10 - 17 Uhr.
-              <br />
-              <a href={tagDerGartentuer} target="_blank" rel="noopener">
-                Flyer downloaden
-              </a>
-              .
+              Planzenschnittkurs um 14:00 Uhr. Ort wird noch bekannt gegeben.
             </td>
           </tr>
           <tr>
             <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
-              27.08.2022
+              26.08.2023
             </td>
             <td>Obstbaumversteigerung, 14 Uhr. Treffpunkt am Weiher.</td>
           </tr>
-          <tr>
-            <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
-              03.09.2022
-            </td>
-            <td>
-              Arbeitseinsatz Kreislehrgarten. Treffpunkt 9 Uhr am alten
-              Feuerwehrhaus.
-            </td>
-          </tr>
-          <tr>
-            <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
-              16.10.2022
-            </td>
-            <td>Herbstwanderung. Programm wird noch bekannt gegeben.</td>
-          </tr>
+
         </table>
       </p>
       <p>
