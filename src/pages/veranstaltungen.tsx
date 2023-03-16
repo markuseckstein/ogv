@@ -45,7 +45,7 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
           </tr>
           <tr>
             <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
-              08.07.2023
+              15.07.2023
             </td>
             <td>
               Planzenschnittkurs um 14:00 Uhr. Ort wird noch bekannt gegeben.
