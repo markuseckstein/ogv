@@ -24,11 +24,11 @@ const FotogaleriePage = ({ data }: PageProps<DataProps>) => {
 
       <p>
         <a
-          href="https://www.kv-gartenbau-nl.de/images/eigene/2020_Fruehlingsbilder/index.html"
+          href="https://www.kv-gartenbau-nl.de/images/eigene/"
           target="_blank"
           rel="noopener"
         >
-          Fotoschau 2020 des OGV Kreisverband Nürnberger Land - Einblicke in
+          Fotoschau des OGV Kreisverband Nürnberger Land - Einblicke in
           unsere Gärten
         </a>
       </p>
