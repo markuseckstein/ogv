@@ -33,7 +33,7 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
             <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
               13.05.2023
             </td>
-            <td>Blumenabend 19:00 Uhr im Gasthaus "Weisses Kreuz".</td>
+            <td>Blumenabend 19:30 Uhr im Gasthaus "Weisses Kreuz".</td>
           </tr>
           <tr>
             <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
