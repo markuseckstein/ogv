@@ -40,7 +40,7 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
               02.07.2023
             </td>
             <td>
-              Ausflug zum Botanischen Garten in Erlangen. Genauere Informationen werden noch bekannt gegeben.
+              Bus-Ausflug nach Riedenburg und Weltenburg. Abfahrt 9:30 am Dorfweiher. Unkostenbeitrag 50€, Anmeldung bis 11.06. bei Karin Tempelmeier.
             </td>
           </tr>
           <tr>
