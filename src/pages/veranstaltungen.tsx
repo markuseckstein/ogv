@@ -37,10 +37,10 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
           </tr>
           <tr>
             <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
-              02.07.2023
+              <s>02.07.2023</s>
             </td>
             <td>
-              Bus-Ausflug nach Riedenburg und Weltenburg. Abfahrt 9:30 am Dorfweiher. Unkostenbeitrag 50€, Anmeldung bis 11.06. bei Karin Tempelmeier.
+              <span style={{ color: "red" }}>ABGESAGT </span><s>Bus-Ausflug nach Riedenburg und Weltenburg. Abfahrt 9:30 am Dorfweiher. Unkostenbeitrag 50€, Anmeldung bis 11.06. bei Karin Tempelmeier.</s>
             </td>
           </tr>
           <tr>
