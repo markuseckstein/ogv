@@ -48,7 +48,10 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
               15.07.2023
             </td>
             <td>
-              Planzenschnittkurs um 14:00 Uhr. Ort wird noch bekannt gegeben.
+              Planzenschnittkurs um 14:00 Uhr.<br/>
+              Thema: Sommerschnitt an Obstgehölzen<br/>
+              Treffpunkt: Steuobstwiese an der Altdorfer Straße 
+              
             </td>
           </tr>
           <tr>
