@@ -28,8 +28,8 @@ const FotogaleriePage = ({ data }: PageProps<DataProps>) => {
           target="_blank"
           rel="noopener"
         >
-          Fotoschau des OGV Kreisverband Nürnberger Land - Einblicke in
-          unsere Gärten
+          Fotoschau des OGV Kreisverband Nürnberger Land - Einblicke in unsere
+          Gärten
         </a>
       </p>
     </Layout>

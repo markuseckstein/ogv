@@ -40,7 +40,12 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
               <s>02.07.2023</s>
             </td>
             <td>
-              <span style={{ color: "red" }}>ABGESAGT </span><s>Bus-Ausflug nach Riedenburg und Weltenburg. Abfahrt 9:30 am Dorfweiher. Unkostenbeitrag 50€, Anmeldung bis 11.06. bei Karin Tempelmeier.</s>
+              <span style={{ color: "red" }}>ABGESAGT </span>
+              <s>
+                Bus-Ausflug nach Riedenburg und Weltenburg. Abfahrt 9:30 am
+                Dorfweiher. Unkostenbeitrag 50€, Anmeldung bis 11.06. bei Karin
+                Tempelmeier.
+              </s>
             </td>
           </tr>
           <tr>
@@ -48,10 +53,11 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
               15.07.2023
             </td>
             <td>
-              Planzenschnittkurs um 14:00 Uhr.<br />
-              Thema: Sommerschnitt an Obstgehölzen<br />
+              Planzenschnittkurs um 14:00 Uhr.
+              <br />
+              Thema: Sommerschnitt an Obstgehölzen
+              <br />
               Treffpunkt: Steuobstwiese an der Altdorfer Straße
-
             </td>
           </tr>
           <tr>
@@ -66,7 +72,6 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
             </td>
             <td>Mosthausfest. Beginn 13:30 Uhr.</td>
           </tr>
-
         </table>
       </p>
       <p>
