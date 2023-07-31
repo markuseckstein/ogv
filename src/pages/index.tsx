@@ -42,7 +42,7 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
         loading="eager"
       />
 
-      {/* <aside
+      <aside
         style={{
           marginTop: "50px",
           backgroundColor: "#DFFCD6",
@@ -50,11 +50,11 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
           padding: "10px",
         }}
       >
-        <h2>Hinweis Mostsaison 2022</h2>
+        <h2>Hinweis Mostsaison 2023</h2>
         <p>
           Mosttermine können Sie <Link to="/mosterei">hier</Link> anfragen.
         </p>
-      </aside> */}
+      </aside>
     </Layout>
   );
 };
