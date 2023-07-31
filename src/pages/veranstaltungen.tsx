@@ -48,10 +48,10 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
               15.07.2023
             </td>
             <td>
-              Planzenschnittkurs um 14:00 Uhr.<br/>
-              Thema: Sommerschnitt an Obstgehölzen<br/>
-              Treffpunkt: Steuobstwiese an der Altdorfer Straße 
-              
+              Planzenschnittkurs um 14:00 Uhr.<br />
+              Thema: Sommerschnitt an Obstgehölzen<br />
+              Treffpunkt: Steuobstwiese an der Altdorfer Straße
+
             </td>
           </tr>
           <tr>
@@ -59,6 +59,12 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
               26.08.2023
             </td>
             <td>Obstbaumversteigerung, 14 Uhr. Treffpunkt am Weiher.</td>
+          </tr>
+          <tr>
+            <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
+              08.10.2023
+            </td>
+            <td>Mosthausfest. Beginn 13:30 Uhr.</td>
           </tr>
 
         </table>
