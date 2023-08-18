@@ -60,12 +60,7 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
               Treffpunkt: Steuobstwiese an der Altdorfer Straße
             </td>
           </tr>
-          <tr>
-            <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
-              26.08.2023
-            </td>
-            <td>Obstbaumversteigerung, 14 Uhr. Treffpunkt am Weiher.</td>
-          </tr>
+          
           <tr>
             <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
               08.10.2023
