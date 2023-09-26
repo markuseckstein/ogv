@@ -3,6 +3,7 @@ import { IGatsbyImageData } from "gatsby-plugin-image";
 
 import React from "react";
 import Layout from "../components/layout";
+import satzungsaenderungen from "../download/vergleich_satzungen_2023.pdf";
 
 const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
   return (
@@ -60,12 +61,26 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
               Treffpunkt: Steuobstwiese an der Altdorfer Straße
             </td>
           </tr>
-          
+
           <tr>
             <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
               08.10.2023
             </td>
             <td>Mosthausfest. Beginn 13:30 Uhr.</td>
+          </tr>
+
+          <tr>
+            <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
+              27.10.2023
+            </td>
+            <td>
+              Mitgliederversammlung zur Änderung der Vereinssatzung.
+              <br /> Beginn 18:30 Uhr im Gasthaus Weisses Kreuz.
+              <br />
+              <a target="_blank" href={satzungsaenderungen} rel="noopener">
+                Vorgeschlagene Änderungen der Satzung
+              </a>
+            </td>
           </tr>
         </table>
       </p>
