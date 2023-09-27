@@ -66,7 +66,7 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
             <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
               08.10.2023
             </td>
-            <td>Mosthausfest. Beginn 13:30 Uhr.</td>
+            <td>Mosthausfest. Beginn 14:00 Uhr.</td>
           </tr>
 
           <tr>
