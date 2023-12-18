@@ -112,7 +112,7 @@ const MostereiPage = ({ data }: PageProps<DataProps>) => {
         <li>Samstag, 07. Oktober</li>
       </ul>
 
-      <p>Alle Termine für 2023 sind bereits ausgebucht.</p> 
+      <p>Alle Termine für 2023 sind bereits ausgebucht.</p>
 
       {/* <h2>Terminanfrage</h2>
       <p>
