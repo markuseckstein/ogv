@@ -14,6 +14,7 @@ const config: GatsbyConfig = {
       { name: 'Kontakt', link: '/kontakt'},
       { name: 'Impressum', link: '/impressum'},
       { name: 'Fotogalerie', link: '/fotogalerie'},
+      { name: 'LEADER Projekt', link: '/leader'},
     ]
   },
   plugins: ["gatsby-plugin-sass", "gatsby-plugin-image", "gatsby-plugin-react-helmet", "gatsby-plugin-extract-image-colors", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
