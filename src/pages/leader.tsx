@@ -36,7 +36,7 @@ const LeaderPage = ({ data }: PageProps<DataProps>) => {
 
       <p>
         In unserer Vereinsmosterei in Altenthann stellen wir aus den
-        Angelieferten Äpfeln unserer Mitglieder und weiterer Kunden Apfelsaft
+        angelieferten Äpfeln unserer Mitglieder und weiterer Kunden Apfelsaft
         her. Die Äpfel stammen meist von alten, ökologisch wertvollen Bäumen.
         Durch die Herstellung von Saft aus dem eigenen Obst bieten wir dem
         Erhalt der Bäume eine Zukunft. Darüber Hinaus kann das Obst von neu
