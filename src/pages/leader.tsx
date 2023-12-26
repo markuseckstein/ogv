@@ -32,6 +32,16 @@ const LeaderPage = ({ data }: PageProps<DataProps>) => {
             https://www.leader.bayern.de
           </a>
         </p>
+        <h3>Hier investiert Europa in die ländlichen Gebiete</h3>
+        <p>Aufwertung der Mosterei Altenthann - Fit für die Zukunft</p>
+        <h3>mitfinanziert durch den Freistaat Bayern</h3>
+        <p>
+          im Rahmen des Entwicklungsprogramms für den ländlichen Raum in Bayern
+          2014 - 2022
+        </p>
+        <h3>Lokale Aktionsgruppe</h3>
+        <p>LAG Nürnberger Land e.V.</p>
+        <StaticImage src="../images/leader/foerderhinweis.jpg" />
       </section>
 
       <p>
