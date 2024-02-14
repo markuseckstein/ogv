@@ -76,7 +76,7 @@ const KontaktPage = ({ data }: PageProps<DataProps>) => {
             <br />
             90592 Schwarzenbruck
             <br />
-            <a href="tel:+49-1751138721">Tel. 0175 1138721</a>
+            <a href="tel:+49-15174334867">Tel. 0151 74334867</a>
             <br />
             <a href="mailto:brigitte.oberreuther-oerthel@ogv-altenthann-pattenhofen.de">
               brigitte.oberreuther-oerthel@ogv-altenthann-pattenhofen.de
