@@ -31,10 +31,6 @@ const GeraeteMostereiPage = ({ data }: PageProps<DataProps>) => {
               <td>5€ / Stunde</td>
             </tr>
             <tr>
-              <td>Combi-Häcksler mit Benzinmotor</td>
-              <td>5€ / Stunde</td>
-            </tr>
-            <tr>
               <td>Streuwagen</td>
               <td>kostenlos, freiwillige Spende</td>
             </tr>
@@ -42,14 +38,7 @@ const GeraeteMostereiPage = ({ data }: PageProps<DataProps>) => {
               <td>Rasenwalze</td>
               <td>kostenlos, freiwillige Spende</td>
             </tr>
-            <tr>
-              <td>Alu-Mehrzweckleiter</td>
-              <td>kostenlos, freiwillige Spende</td>
-            </tr>
-            <tr>
-              <td>Baumsäge mit langem Stiel</td>
-              <td>kostenlos, freiwillige Spende</td>
-            </tr>
+            
           </tbody>
         </table>
       </p>
