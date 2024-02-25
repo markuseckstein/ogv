@@ -13,73 +13,89 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
       teaserAltText="Willkommen beim Obst- und Gartenbauverein Pattenhofen Altenthann e.V."
       backgroundColor={data.file.colors.lightMuted}
     >
-      <h1>Jahresprogramm 2023</h1>
+      <h1>Jahresprogramm 2024</h1>
       <p>
         <table>
           <tr>
             <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
-              17.03.2023
+              14.03.2024
             </td>
             <td>
-              Jahreshauptversammlung 19:30 Uhr im Gasthaus "Weisses Kreuz".
-            </td>
-          </tr>
-          <tr>
-            <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
-              31.03.2023
-            </td>
-            <td>Ortsrandsäuberung 17:00 Uhr, Treffpunkt am Dorfweiher.</td>
-          </tr>
-          <tr>
-            <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
-              13.05.2023
-            </td>
-            <td>Blumenabend 19:30 Uhr im Gasthaus "Weisses Kreuz".</td>
-          </tr>
-          <tr>
-            <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
-              <s>02.07.2023</s>
-            </td>
-            <td>
-              <span style={{ color: "red" }}>ABGESAGT </span>
-              <s>
-                Bus-Ausflug nach Riedenburg und Weltenburg. Abfahrt 9:30 am
-                Dorfweiher. Unkostenbeitrag 50€, Anmeldung bis 11.06. bei Karin
-                Tempelmeier.
-              </s>
-            </td>
-          </tr>
-          <tr>
-            <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
-              15.07.2023
-            </td>
-            <td>
-              Planzenschnittkurs um 14:00 Uhr.
-              <br />
-              Thema: Sommerschnitt an Obstgehölzen
-              <br />
-              Treffpunkt: Steuobstwiese an der Altdorfer Straße
+              Helferessen, im Weißen Kreuz, 19:00 Uhr
             </td>
           </tr>
 
           <tr>
             <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
-              08.10.2023
+              20.03.2024
             </td>
-            <td>Mosthausfest. Beginn 14:00 Uhr.</td>
+            <td>
+              Jahreshauptversammlung 19:00 Uhr im Gasthaus "Weisses Kreuz".
+            </td>
+          </tr>
+
+
+
+          <tr>
+            <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
+              22.03.2024
+            </td>
+            <td>Flurreinigung 17:00 Uhr, Treffpunkt am Dorfweiher.</td>
+          </tr>
+          <tr>
+            <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
+              12.04.2024
+            </td>
+            <td>Veredelungskurs, im alten Feuerwehrhaus, 15:00 Uhr.</td>
+          </tr>
+          <tr>
+            <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
+              16.06.2024
+            </td>
+            <td>
+              OGV-Ausflug zur Landesgartenschau in Kirchheim
+            </td>
+          </tr>
+          <tr>
+            <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
+              05.07.2024
+            </td>
+            <td>
+              Vereinsabend, im Weißen Kreuz um 19:00 Uhr
+            </td>
           </tr>
 
           <tr>
             <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
-              27.10.2023
+              12.07.2024
+            </td>
+            <td>Sommerschnittkurs, 16:00 Uhr.</td>
+          </tr>
+
+          <tr>
+            <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
+              25.07.2024
             </td>
             <td>
-              Mitgliederversammlung zur Änderung der Vereinssatzung.
-              <br /> Beginn 18:30 Uhr im Gasthaus Weisses Kreuz.
-              <br />
-              <a target="_blank" href={satzungsaenderungen} rel="noopener">
-                Vorgeschlagene Änderungen der Satzung
-              </a>
+              Mostersitzung, 19:00 Uhr
+            </td>
+          </tr>
+
+          <tr>
+            <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
+              24.08.2024
+            </td>
+            <td>
+              Obstbaumversteigerung, 14:00 Uhr
+            </td>
+          </tr>
+
+          <tr>
+            <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
+              22.09.2024
+            </td>
+            <td>
+              Herbstwanderung
             </td>
           </tr>
         </table>
