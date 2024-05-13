@@ -50,14 +50,6 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
           </tr>
           <tr>
             <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
-              16.06.2024
-            </td>
-            <td>
-              OGV-Ausflug zur Landesgartenschau in Kirchheim
-            </td>
-          </tr>
-          <tr>
-            <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
               05.07.2024
             </td>
             <td>
@@ -69,7 +61,7 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
             <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
               12.07.2024
             </td>
-            <td>Sommerschnittkurs, 16:00 Uhr.</td>
+            <td>Sommerschnittkurs, 15:00 Uhr.</td>
           </tr>
 
           <tr>
