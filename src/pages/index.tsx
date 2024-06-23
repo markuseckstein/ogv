@@ -2,7 +2,7 @@ import { graphql, Link, PageProps } from "gatsby";
 import { IGatsbyImageData, StaticImage } from "gatsby-plugin-image";
 import * as React from "react";
 import Layout from "../components/layout";
-import tagDerGartentuer from "../download/Flyer_offene_Gartentuer_2022.pdf";
+// import tagDerGartentuer from "../download/Flyer_offene_Gartentuer_2022.pdf";
 
 // markup
 const IndexPage = ({ data }: PageProps<DataProps>) => {
