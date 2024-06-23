@@ -42,7 +42,7 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
         loading="eager"
       />
 
-      {/* <aside
+      <aside
         style={{
           marginTop: "50px",
           backgroundColor: "#DFFCD6",
@@ -50,11 +50,13 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
           padding: "10px",
         }}
       >
-        <h2>Hinweis Mostsaison 2023</h2>
+        <h2>Information für unsere Mitglieder</h2>
         <p>
-          Mosttermine können Sie <Link to="/mosterei">hier</Link> anfragen.
+          Zum 31.10.2024 stellt die <strong>Firma Batzner Hagebaumarkt</strong>{" "}
+          in Feucht das Rabattprogramm für Vereine generell - und somit auch für
+          die Mitglieder des OGV ein.
         </p>
-      </aside> */}
+      </aside>
     </Layout>
   );
 };

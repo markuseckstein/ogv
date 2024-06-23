@@ -38,7 +38,6 @@ const GeraeteMostereiPage = ({ data }: PageProps<DataProps>) => {
               <td>Rasenwalze</td>
               <td>kostenlos, freiwillige Spende</td>
             </tr>
-            
           </tbody>
         </table>
       </p>

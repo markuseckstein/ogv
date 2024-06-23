@@ -20,9 +20,7 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
             <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
               14.03.2024
             </td>
-            <td>
-              Helferessen, im Weißen Kreuz, 19:00 Uhr
-            </td>
+            <td>Helferessen, im Weißen Kreuz, 19:00 Uhr</td>
           </tr>
 
           <tr>
@@ -33,8 +31,6 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
               Jahreshauptversammlung 19:00 Uhr im Gasthaus "Weisses Kreuz".
             </td>
           </tr>
-
-
 
           <tr>
             <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
@@ -52,9 +48,7 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
             <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
               05.07.2024
             </td>
-            <td>
-              Vereinsabend, im Weißen Kreuz um 19:00 Uhr
-            </td>
+            <td>Vereinsabend, im Weißen Kreuz um 19:00 Uhr</td>
           </tr>
 
           <tr>
@@ -68,27 +62,21 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
             <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
               25.07.2024
             </td>
-            <td>
-              Mostersitzung, 19:00 Uhr
-            </td>
+            <td>Mostersitzung, 19:00 Uhr</td>
           </tr>
 
           <tr>
             <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
               24.08.2024
             </td>
-            <td>
-              Obstbaumversteigerung, 14:00 Uhr
-            </td>
+            <td>Obstbaumversteigerung, 14:00 Uhr</td>
           </tr>
 
           <tr>
             <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
               22.09.2024
             </td>
-            <td>
-              Herbstwanderung
-            </td>
+            <td>Herbstwanderung</td>
           </tr>
         </table>
       </p>
