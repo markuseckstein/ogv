@@ -20,7 +20,7 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
             <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
               14.03.2024
             </td>
-            <td>Helferessen, im Weißen Kreuz, 19:00 Uhr</td>
+            <td>Helferessen, im Weissen Kreuz, 19:00 Uhr</td>
           </tr>
 
           <tr>
@@ -48,7 +48,16 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
             <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
               05.07.2024
             </td>
-            <td>Vereinsabend, im Weißen Kreuz um 19:00 Uhr</td>
+            <td>
+              <p>Vereinsabend, im Weissen Kreuz um 19:00 Uhr</p>
+              <p><strong>Fachvortrag</strong> mit Annemarie Drüschler (Dipl.-Ing. Agrar- und Umweltwissenschaften) zum Thema:</p>
+              <p>
+                <i><strong>Gärtnern in Zeiten des Klimawandels</strong><br />
+                  Was kann der Gärtner tun? Einsatz von angepassten Pflanzen, Bodenverbesserung, Windschutz, Wassermanagement.
+                </i>
+
+              </p>
+            </td>
           </tr>
 
           <tr>
