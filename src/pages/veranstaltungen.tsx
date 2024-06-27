@@ -45,18 +45,39 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
             <td>Veredelungskurs, im alten Feuerwehrhaus, 15:00 Uhr.</td>
           </tr>
           <tr>
-            <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
+            <td
+              style={{
+                whiteSpace: "nowrap",
+                verticalAlign: "top",
+                textDecoration: "line-through",
+              }}
+            >
               05.07.2024
             </td>
             <td>
-              <p>Vereinsabend, im Weissen Kreuz um 19:00 Uhr</p>
-              <p><strong>Fachvortrag</strong> mit Annemarie Drüschler (Dipl.-Ing. Agrar- und Umweltwissenschaften) zum Thema:</p>
-              <p>
-                <i><strong>Gärtnern in Zeiten des Klimawandels</strong><br />
-                  Was kann der Gärtner tun? Einsatz von angepassten Pflanzen, Bodenverbesserung, Windschutz, Wassermanagement.
-                </i>
-
-              </p>
+              <section>
+                <p style={{ color: "red" }}>
+                  <strong>Verschoben!</strong>
+                </p>
+                <p>
+                  Ein Ersatztermin wird hier veröffentlicht, sobald bekannt.
+                </p>
+              </section>
+              <section style={{ textDecoration: "line-through" }}>
+                <p>Vereinsabend, im Weissen Kreuz um 19:00 Uhr</p>
+                <p>
+                  <strong>Fachvortrag</strong> mit Annemarie Drüschler
+                  (Dipl.-Ing. Agrar- und Umweltwissenschaften) zum Thema:
+                </p>
+                <p>
+                  <i>
+                    <strong>Gärtnern in Zeiten des Klimawandels</strong>
+                    <br />
+                    Was kann der Gärtner tun? Einsatz von angepassten Pflanzen,
+                    Bodenverbesserung, Windschutz, Wassermanagement.
+                  </i>
+                </p>
+              </section>
             </td>
           </tr>
 
