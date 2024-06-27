@@ -55,29 +55,7 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
               05.07.2024
             </td>
             <td>
-              <section>
-                <p style={{ color: "red" }}>
-                  <strong>Verschoben!</strong>
-                </p>
-                <p>
-                  Ein Ersatztermin wird hier veröffentlicht, sobald bekannt.
-                </p>
-              </section>
-              <section style={{ textDecoration: "line-through" }}>
-                <p>Vereinsabend, im Weissen Kreuz um 19:00 Uhr</p>
-                <p>
-                  <strong>Fachvortrag</strong> mit Annemarie Drüschler
-                  (Dipl.-Ing. Agrar- und Umweltwissenschaften) zum Thema:
-                </p>
-                <p>
-                  <i>
-                    <strong>Gärtnern in Zeiten des Klimawandels</strong>
-                    <br />
-                    Was kann der Gärtner tun? Einsatz von angepassten Pflanzen,
-                    Bodenverbesserung, Windschutz, Wassermanagement.
-                  </i>
-                </p>
-              </section>
+              <strong style={{ color: "red" }}>Vereinsabend verschoben auf 25.10.2024!</strong>
             </td>
           </tr>
 
@@ -107,6 +85,24 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
               22.09.2024
             </td>
             <td>Herbstwanderung</td>
+          </tr>
+          <tr>
+            <td>25.10.2024</td>
+            <td>
+              <p>Vereinsabend, im Weissen Kreuz um 19:00 Uhr</p>
+              <p>
+                <strong>Fachvortrag</strong> mit Annemarie Drüschler (Dipl.-Ing.
+                Agrar- und Umweltwissenschaften) zum Thema:
+              </p>
+              <p>
+                <i>
+                  <strong>Gärtnern in Zeiten des Klimawandels</strong>
+                  <br />
+                  Was kann der Gärtner tun? Einsatz von angepassten Pflanzen,
+                  Bodenverbesserung, Windschutz, Wassermanagement.
+                </i>
+              </p>
+            </td>
           </tr>
         </table>
       </p>
