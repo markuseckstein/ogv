@@ -24,10 +24,7 @@ const MostereiPage = ({ data }: PageProps<DataProps>) => {
         verarbeitet werden.
       </p>
       <h4 style={{ color: "red" }}>Wichtige Hinweise!</h4>
-      <p>
-        Der Mostbetrieb wird unter den zum Zeitpunkt geltenden COVID Auflagen
-        durchgeführt.
-      </p>
+      
 
       <p>
         Wir füllen in Beutel und in Ihre eigenen Flaschen ab. Wir empfehlen aus
@@ -103,18 +100,28 @@ const MostereiPage = ({ data }: PageProps<DataProps>) => {
       </table>
       <br />
 
-      <h2>Mosttermine 2023</h2>
-      <p>Die Termine für 2023 sind</p>
+      <h2>Mosttermine 2024</h2>
+      <p>Die Termine für 2024 sind</p>
       <ul>
-        <li>Freitag, 29. September</li>
-        <li>Samstag, 30. September</li>
-        <li>Freitag, 06. Oktober</li>
-        <li>Samstag, 07. Oktober</li>
+        <li>Freitag, 13. September</li>
+        <li>Samstag, 14. September</li>
+        <li>Freitag, 20. September</li>
+        <li>Samstag, 21. September</li>
+        <li>Freitag, 27. September</li>
+        <li>Samstag, 28. September</li>
+
+        <li>Freitag, 04. Oktober</li>
+        <li>Samstag, 05. Oktober</li>
+        <li>Freitag, 11. Oktober</li>
+        <li>Samstag, 12. Oktober</li>
+        <li>Freitag, 18. Oktober</li>
+        <li>Samstag, 19. Oktober</li>
+        <li>Freitag, 25. Oktober</li>
+        <li>Samstag, 26. Oktober</li>
       </ul>
 
-      <p>Alle Termine für 2023 sind bereits ausgebucht.</p>
 
-      {/* <h2>Terminanfrage</h2>
+      <h2>Terminanfrage</h2>
       <p>
         Sie können hier eine Terminanfrage stellen. Wir werden uns dann so
         schnell wie möglich telefonisch bei Ihnen zur genauen Terminabsprache
@@ -129,7 +136,7 @@ const MostereiPage = ({ data }: PageProps<DataProps>) => {
         marginWidth={0}
       >
         Wird geladen…
-      </iframe> */}
+      </iframe>
     </Layout>
   );
 };

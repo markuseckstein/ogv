@@ -50,6 +50,21 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
           padding: "10px",
         }}
       >
+        <h2>Mostsaison 2024</h2>
+        <p>
+          Mosttermine können ab sofort über unser <Link to="/mosterei">Formular</Link> angefragt werden.
+        </p>
+      </aside>
+
+
+      <aside
+        style={{
+          marginTop: "50px",
+          backgroundColor: "#f9fcd4",
+          borderRadius: "5px",
+          padding: "10px",
+        }}
+      >
         <h2>Information für unsere Mitglieder</h2>
         <p>
           Zum 31.10.2024 stellt die <strong>Firma Batzner Hagebaumarkt</strong>{" "}
