@@ -72,6 +72,11 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
           die Mitglieder des OGV ein.
         </p>
       </aside>
+      <p>
+        <Link to="/leader">
+          <StaticImage src="../images/leader/foerderhinweis.jpg" alt={"LEADER Projekt"} />
+        </Link>
+      </p>
     </Layout>
   );
 };
