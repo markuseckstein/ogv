@@ -42,6 +42,7 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
         loading="eager"
       />
 
+
       <aside
         style={{
           marginTop: "50px",
@@ -72,11 +73,20 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
           die Mitglieder des OGV ein.
         </p>
       </aside>
+
+      <br />
+      <h2>EU-Förderung</h2>
       <p>
+
         <Link to="/leader">
-          <StaticImage src="../images/leader/foerderhinweis.jpg" alt={"LEADER Projekt"} />
+          <StaticImage src="../images/leader/foerderhinweis.jpg" alt={"LEADER Projekt - Hier investiert Europa in die ländlichen Gebiete. Aufwertung der Mosterei Altenthann - Fit für die Zukunft. Mitfinanziert durch den Freistaat Bayern im Rahmen des Entwicklungsprogramms für den ländlichen Raum in Bayern 2014 - 2022"}
+            style={{
+              borderRadius: "5px",
+            }}
+          />
         </Link>
       </p>
+
     </Layout>
   );
 };
