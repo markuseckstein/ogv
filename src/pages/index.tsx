@@ -87,7 +87,7 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
           Hier investiert Europa in die ländlichen Gebiete. Aufwertung der Mosterei Altenthann - Fit für die Zukunft.
         </p>
         <p>
-          Gefördert durch das Bayerische Staatsministerium für Ernährung, Landwirtschaft und Forsten und den Europäishen Landwirtschaftsfonds
+          Gefördert durch das Bayerische Staatsministerium für Ernährung, Landwirtschaft und Forsten und den Europäischen Landwirtschaftsfonds
           für die Entwicklung des ländlichen Raums (ELER).
         </p>
 
