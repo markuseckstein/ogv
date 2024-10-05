@@ -41,7 +41,23 @@ const LeaderPage = ({ data }: PageProps<DataProps>) => {
         </p>
         <h3>Lokale Aktionsgruppe</h3>
         <p>LAG Nürnberger Land e.V.</p>
-        <StaticImage src="../images/leader/foerderhinweis.jpg" />
+
+        <h3>Förderung</h3>
+        <StaticImage alt="Bayerisches Wappen, EU Logo, LEADER Logo" src="../images/leader/foerderhinweis.jpg" />
+        <p>Gefördert durch das Bayerische Staatsministerium für Ernährung, Landwirtschaft und Forsten und den Europäischen Landwirtschaftsfonds
+          für die Entwicklung des ländlichen Raums (ELER).
+        </p>
+
+        <h3>Projektbetreuung</h3>
+        <p>
+          <a href="https://www.aelf-fu.bayern.de/" target="_blank"
+            rel="noopener noreferrer">
+            Amt für Ernährung, Landwirtschaft und Forsten, Fürth-Uffenheim
+          </a>
+        </p>
+
+        <br/>
+        <StaticImage alt="LEADER Projekttafel (Printversion)" src="../images/leader/leader_tafel.jpg" />
       </section>
 
       <p>
@@ -92,10 +108,10 @@ const LeaderPage = ({ data }: PageProps<DataProps>) => {
       </p>
       <section>
         <p>
-          <StaticImage src="../images/leader/presse_einbau01.jpg" />
+          <StaticImage alt="Anlieferung der neuen Presse" src="../images/leader/presse_einbau01.jpg" />
         </p>
         <p>
-          <StaticImage src="../images/leader/presse_einbau02.jpg" />
+          <StaticImage alt="Einbau der neuen Presse" src="../images/leader/presse_einbau02.jpg" />
         </p>
       </section>
     </Layout>

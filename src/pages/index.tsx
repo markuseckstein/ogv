@@ -76,16 +76,22 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
 
       <br />
       <h2>EU-Förderung</h2>
-      <p>
+      <Link to="/leader">
+        <StaticImage src="../images/leader/foerderhinweis.jpg" alt={"LEADER Projekt - Hier investiert Europa in die ländlichen Gebiete. Aufwertung der Mosterei Altenthann - Fit für die Zukunft. Mitfinanziert durch den Freistaat Bayern im Rahmen des Entwicklungsprogramms für den ländlichen Raum in Bayern 2014 - 2022"}
+          style={{
+            borderRadius: "5px",
+          }}
+        />
 
-        <Link to="/leader">
-          <StaticImage src="../images/leader/foerderhinweis.jpg" alt={"LEADER Projekt - Hier investiert Europa in die ländlichen Gebiete. Aufwertung der Mosterei Altenthann - Fit für die Zukunft. Mitfinanziert durch den Freistaat Bayern im Rahmen des Entwicklungsprogramms für den ländlichen Raum in Bayern 2014 - 2022"}
-            style={{
-              borderRadius: "5px",
-            }}
-          />
-        </Link>
-      </p>
+        <p>
+          Hier investiert Europa in die ländlichen Gebiete. Aufwertung der Mosterei Altenthann - Fit für die Zukunft.
+        </p>
+        <p>
+          Gefördert durch das Bayerische Staatsministerium für Ernährung, Landwirtschaft und Forsten und den Europäishen Landwirtschaftsfonds
+          für die Entwicklung des ländlichen Raums (ELER).
+        </p>
+
+      </Link>
 
     </Layout>
   );
