@@ -3,7 +3,7 @@ import { IGatsbyImageData, StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import Layout from "../components/layout";
 
-const LeaderPage = ({ data }: PageProps<DataProps>) => {
+const MostereiPressePage = ({ data }: PageProps<DataProps>) => {
   return (
     <Layout
       teaserImage={data.file.childImageSharp.gatsbyImageData}
@@ -11,54 +11,7 @@ const LeaderPage = ({ data }: PageProps<DataProps>) => {
       teaserAltText="Willkommen beim Obst- und Gartenbauverein Pattenhofen Altenthann e.V."
       backgroundColor={data.file.colors.lightMuted}
     >
-      <h1>LEADER-Projekt „Mosterei Altenthann – Fit für die Zukunft“</h1>
-
-      <section
-        style={{
-          margin: "30px 0",
-          backgroundColor: "#eee",
-          borderRadius: "12px",
-          padding: "15px",
-        }}
-      >
-        <h2>Weitere Informationen</h2>
-        <p>
-          Weitere Informationen zum LEADER-Programm in Bayern finden Sie auf{" "}
-          <a
-            href="https://www.leader.bayern.de"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            https://www.leader.bayern.de
-          </a>
-        </p>
-        <h3>Hier investiert Europa in die ländlichen Gebiete</h3>
-        <p>Aufwertung der Mosterei Altenthann - Fit für die Zukunft</p>
-        <h3>mitfinanziert durch den Freistaat Bayern</h3>
-        <p>
-          im Rahmen des Entwicklungsprogramms für den ländlichen Raum in Bayern
-          2014 - 2022
-        </p>
-        <h3>Lokale Aktionsgruppe</h3>
-        <p>LAG Nürnberger Land e.V.</p>
-
-        <h3>Förderung</h3>
-        <StaticImage alt="Bayerisches Wappen, EU Logo, LEADER Logo" src="../images/leader/foerderhinweis.jpg" />
-        <p>Gefördert durch das Bayerische Staatsministerium für Ernährung, Landwirtschaft und Forsten und den Europäischen Landwirtschaftsfonds
-          für die Entwicklung des ländlichen Raums (ELER).
-        </p>
-
-        <h3>Projektbetreuung</h3>
-        <p>
-          <a href="https://www.aelf-fu.bayern.de/" target="_blank"
-            rel="noopener noreferrer">
-            Amt für Ernährung, Landwirtschaft und Forsten, Fürth-Uffenheim
-          </a>
-        </p>
-
-        <br/>
-        <StaticImage alt="LEADER Projekttafel (Printversion)" src="../images/leader/leader_tafel.jpg" />
-      </section>
+      <h1>Förder-Projekt „Mosterei Altenthann – Fit für die Zukunft“</h1>
 
       <p>
         In unserer Vereinsmosterei in Altenthann stellen wir aus den
@@ -108,17 +61,23 @@ const LeaderPage = ({ data }: PageProps<DataProps>) => {
       </p>
       <section>
         <p>
-          <StaticImage alt="Anlieferung der neuen Presse" src="../images/leader/presse_einbau01.jpg" />
+          <StaticImage
+            alt="Anlieferung der neuen Presse"
+            src="../images/leader/presse_einbau01.jpg"
+          />
         </p>
         <p>
-          <StaticImage alt="Einbau der neuen Presse" src="../images/leader/presse_einbau02.jpg" />
+          <StaticImage
+            alt="Einbau der neuen Presse"
+            src="../images/leader/presse_einbau02.jpg"
+          />
         </p>
       </section>
     </Layout>
   );
 };
 
-export default LeaderPage;
+export default MostereiPressePage;
 
 export const query = graphql`
   query {

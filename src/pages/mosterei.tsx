@@ -1,4 +1,4 @@
-import { graphql, PageProps } from "gatsby";
+import { graphql, Link, PageProps } from "gatsby";
 import { IGatsbyImageData } from "gatsby-plugin-image";
 import React from "react";
 import Layout from "../components/layout";
@@ -23,8 +23,13 @@ const MostereiPage = ({ data }: PageProps<DataProps>) => {
         In unserer Mosterei können die eigenen Äpfel zu Apfelsaft oder Most
         verarbeitet werden.
       </p>
+      <p>
+        <Link to="/mosterei_presse">
+          Seit der Mostsaison 2024 haben wir eine neue Presse
+        </Link>{" "}
+        in Betrieb genommen.
+      </p>
       <h4 style={{ color: "red" }}>Wichtige Hinweise!</h4>
-      
 
       <p>
         Wir füllen in Beutel und in Ihre eigenen Flaschen ab. Wir empfehlen aus
@@ -119,7 +124,6 @@ const MostereiPage = ({ data }: PageProps<DataProps>) => {
         <li>Freitag, 25. Oktober</li>
         <li>Samstag, 26. Oktober</li>
       </ul>
-
 
       <h2>Terminanfrage</h2>
       <p>
