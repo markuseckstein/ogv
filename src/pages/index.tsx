@@ -42,7 +42,7 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
         loading="eager"
       />
 
-      <aside
+      {/* <aside
         style={{
           marginTop: "50px",
           backgroundColor: "#DFFCD6",
@@ -55,7 +55,7 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
           Mosttermine können ab sofort über unser{" "}
           <Link to="/mosterei">Formular</Link> angefragt werden.
         </p>
-      </aside>
+      </aside> */}
 
       <aside
         style={{
