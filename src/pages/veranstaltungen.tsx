@@ -48,7 +48,10 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
             <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
               16.05.2025
             </td>
-            <td>Alternativtermin für die Kräuterwanderung. Ort wird noch bekannt gegeben.</td>
+            <td>
+              Alternativtermin für die Kräuterwanderung. Ort wird noch bekannt
+              gegeben.
+            </td>
           </tr>
           <tr>
             <td
@@ -60,9 +63,7 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
             >
               04.07.2025
             </td>
-            <td>
-              Vereinsabend, 19:30 im Gasthaus "Weisses Kreuz"
-            </td>
+            <td>Vereinsabend, 19:30 im Gasthaus "Weisses Kreuz"</td>
           </tr>
 
           <tr>
@@ -92,7 +93,6 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
             </td>
             <td>Herbstwanderung nach Rasch, 10:00 Uhr altes Feuerwehrhaus</td>
           </tr>
-          
         </table>
       </p>
       <p>
