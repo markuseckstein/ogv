@@ -57,7 +57,7 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
         </p>
       </aside> */}
 
-      <aside
+      {/* <aside
         style={{
           marginTop: "50px",
           backgroundColor: "#f9fcd4",
@@ -71,7 +71,7 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
           in Feucht das Rabattprogramm für Vereine generell - und somit auch für
           die Mitglieder des OGV ein.
         </p>
-      </aside>
+      </aside> */}
 
       <br />
 
