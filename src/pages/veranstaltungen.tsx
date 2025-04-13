@@ -3,7 +3,6 @@ import { IGatsbyImageData } from "gatsby-plugin-image";
 
 import React from "react";
 import Layout from "../components/layout";
-import satzungsaenderungen from "../download/vergleich_satzungen_2023.pdf";
 
 const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
   return (
@@ -42,7 +41,8 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
             <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
               02.05.2025
             </td>
-            <td>Kräuterwanderung. Ort wird noch bekannt gegeben.</td>
+            <td>Kräuterwanderung. 16:00 Uhr bei Fr. Anita Schrödel, Oberdorf 5, Lindelburg.
+              <br />Treffpunkt am Weiher in Altenthann, Abfahrt in Fahrgemeinschaften um 15:45 Uhr.</td>
           </tr>
           <tr>
             <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
@@ -70,7 +70,7 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
             <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
               12.07.2025
             </td>
-            <td>Schnittkurs, 14:00 Uhr (Ort wird noch bekannt gegeben).</td>
+            <td>Schnittkurs, Treffpunkt um 14:00 Uhr am Vereinsheim in Weinhof.</td>
           </tr>
 
           <tr>
