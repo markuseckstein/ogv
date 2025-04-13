@@ -41,8 +41,13 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
             <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
               02.05.2025
             </td>
-            <td>Kräuterwanderung. 16:00 Uhr bei Fr. Anita Schrödel, Oberdorf 5, Lindelburg.
-              <br />Treffpunkt am Weiher in Altenthann, Abfahrt in Fahrgemeinschaften um 15:45 Uhr.</td>
+            <td>
+              Kräuterwanderung. 16:00 Uhr bei Fr. Anita Schrödel, Oberdorf 5,
+              Lindelburg.
+              <br />
+              Treffpunkt am Weiher in Altenthann, Abfahrt in Fahrgemeinschaften
+              um 15:45 Uhr.
+            </td>
           </tr>
           <tr>
             <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
@@ -70,7 +75,9 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
             <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
               12.07.2025
             </td>
-            <td>Schnittkurs, Treffpunkt um 14:00 Uhr am Vereinsheim in Weinhof.</td>
+            <td>
+              Schnittkurs, Treffpunkt um 14:00 Uhr am Vereinsheim in Weinhof.
+            </td>
           </tr>
 
           <tr>
