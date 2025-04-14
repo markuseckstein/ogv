@@ -25,15 +25,15 @@
     "gatsby-plugin-sharp": "5.14.0",
     "gatsby-source-filesystem": "5.14.0",
     "gatsby-transformer-sharp": "5.14.0",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
     "react-helmet": "6.1.0",
     "sass": "1.86.3"
   },
   "devDependencies": {
     "@types/node": "22.14.1",
-    "@types/react": "18.3.20",
-    "@types/react-dom": "18.3.6",
+    "@types/react": "19.1.2",
+    "@types/react-dom": "19.1.2",
     "prettier": "3.5.3",
     "typescript": "5.8.3"
   }
