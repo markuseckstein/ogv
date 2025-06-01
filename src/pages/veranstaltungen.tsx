@@ -73,7 +73,7 @@ const VeranstaltungenPage = ({ data }: PageProps<DataProps>) => {
 
           <tr>
             <td style={{ whiteSpace: "nowrap", verticalAlign: "top" }}>
-              12.07.2025
+              19.07.2025
             </td>
             <td>
               Schnittkurs, Treffpunkt um 14:00 Uhr am Vereinsheim in Weinhof.
