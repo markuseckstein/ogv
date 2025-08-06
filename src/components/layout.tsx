@@ -26,6 +26,7 @@ type DataProps = {
 };
 
 const Layout: React.FC<{
+  children: React.ReactNode;
   teaserImage: IGatsbyImageData;
   teaserPosition: string;
   teaserAltText: string;

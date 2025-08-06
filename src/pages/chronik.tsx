@@ -9,7 +9,7 @@ const KurzchronikPage = ({ data }: PageProps<DataProps>) => {
       teaserImage={data.file.childImageSharp.gatsbyImageData}
       teaserPosition="50% 15%"
       teaserAltText="Willkommen beim Obst- und Gartenbauverein Pattenhofen Altenthann e.V."
-      backgroundColor={data.file.colors.lightMuted}
+      backgroundColor="#f8f9fa"
     >
       <h1>Kurzchronik</h1>
       <p>
@@ -92,9 +92,6 @@ export const query = graphql`
       childImageSharp {
         gatsbyImageData(layout: FULL_WIDTH)
       }
-      colors {
-        ...GatsbyImageColors
-      }
     }
   }
 `;
@@ -102,6 +99,6 @@ export const query = graphql`
 type DataProps = {
   file: {
     childImageSharp: { gatsbyImageData: IGatsbyImageData };
-    colors: { lightMuted: string };
+    
   };
 };

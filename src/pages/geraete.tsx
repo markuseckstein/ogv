@@ -9,7 +9,7 @@ const GeraeteMostereiPage = ({ data }: PageProps<DataProps>) => {
       teaserImage={data.file.childImageSharp.gatsbyImageData}
       teaserPosition="50% 57%"
       teaserAltText="Geräte"
-      backgroundColor={data.file.colors.lightMuted}
+      backgroundColor="#f8f9fa"
     >
       <h1>Geräte</h1>
       <p>
@@ -74,9 +74,6 @@ export const query = graphql`
       childImageSharp {
         gatsbyImageData(layout: FULL_WIDTH)
       }
-      colors {
-        ...GatsbyImageColors
-      }
     }
   }
 `;
@@ -84,6 +81,6 @@ export const query = graphql`
 type DataProps = {
   file: {
     childImageSharp: { gatsbyImageData: IGatsbyImageData };
-    colors: { lightMuted: string };
+    
   };
 };
