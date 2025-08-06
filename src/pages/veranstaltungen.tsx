@@ -125,6 +125,5 @@ export const query = graphql`
 type DataProps = {
   file: {
     childImageSharp: { gatsbyImageData: IGatsbyImageData };
-    
   };
 };
