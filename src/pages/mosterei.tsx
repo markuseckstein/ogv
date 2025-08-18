@@ -63,12 +63,12 @@ const MostereiPage = ({ data }: PageProps<DataProps>) => {
         <tbody>
           <tr>
             <td>Most</td>
-            <td style={cellStyle}>18 €</td>
             <td style={cellStyle}>22 €</td>
+            <td style={cellStyle}>26 €</td>
           </tr>
           <tr>
             <td>Sauermost</td>
-            <td style={cellStyle}>9 €</td>
+            <td style={cellStyle}>11 €</td>
             <td style={cellStyle}>13 €</td>
           </tr>
           <tr>
@@ -105,31 +105,28 @@ const MostereiPage = ({ data }: PageProps<DataProps>) => {
       </table>
       <br />
 
-      <h2>Mosttermine</h2>
-      <p>Die Termine für 2024 sind alle ausgebucht.</p>
+      {/* <h2>Mosttermine</h2>
+      <p>Die Termine für 2025 sind alle ausgebucht.</p>
       <p>
         Zu gegebener Zeit werden wir hier wieder die Termine für 2025 bekannt
         geben.
-      </p>
+      </p> */}
 
-      {/* <h2>Mosttermine 2024</h2>
-      <p>Die Termine für 2024 sind</p>
+      <h2>Mosttermine 2025</h2>
+      <p>Die Termine für 2025 sind</p>
       <ul>
-        <li>Freitag, 13. September</li>
-        <li>Samstag, 14. September</li>
-        <li>Freitag, 20. September</li>
-        <li>Samstag, 21. September</li>
-        <li>Freitag, 27. September</li>
-        <li>Samstag, 28. September</li>
+        <li>Freitag, 12. September</li>
+        <li>Samstag, 13. September</li>
+        <li>Freitag, 19. September</li>
+        <li>Samstag, 20. September</li>
+        <li>Freitag, 26. September</li>
+        <li>Samstag, 27. September</li>
 
-        <li>Freitag, 04. Oktober</li>
-        <li>Samstag, 05. Oktober</li>
-        <li>Freitag, 11. Oktober</li>
-        <li>Samstag, 12. Oktober</li>
-        <li>Freitag, 18. Oktober</li>
-        <li>Samstag, 19. Oktober</li>
-        <li>Freitag, 25. Oktober</li>
-        <li>Samstag, 26. Oktober</li>
+        <li>Samstag, 04. Oktober</li>
+        <li>Freitag, 10. Oktober</li>
+        <li>Samstag, 11. Oktober</li>
+        <li>Freitag, 17. Oktober</li>
+        <li>Samstag, 18. Oktober</li>
       </ul>
 
       <h2>Terminanfrage</h2>
@@ -147,7 +144,7 @@ const MostereiPage = ({ data }: PageProps<DataProps>) => {
         marginWidth={0}
       >
         Wird geladen…
-      </iframe> */}
+      </iframe>
     </Layout>
   );
 };
