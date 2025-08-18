@@ -21,7 +21,7 @@ jobs:
     - name: List output files
       run: ls -la public
     - name: FTP Deploy
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.0
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: ${{ secrets.FTP_SERVER }}
         protocol: ftps
