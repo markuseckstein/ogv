@@ -16,6 +16,8 @@ jobs:
       run: npm ci --legacy-peer-deps
     - name: Build site
       run: npm run build
+    - name: Remove partytown
+      run: rm -rf public/~partytown
     - name: List output files
       run: ls -la public
     - name: FTP Deploy
@@ -27,7 +29,6 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: public/
         server-dir: public_html/
-        dangerous-clean-slate: true
-        log-level: verbose
+        dangerous-clean-slate: false
         exclude: |
           ~partytown/
