@@ -18,11 +18,12 @@ jobs:
       run: npm run build
     - name: List output files
       run: ls -la public
-    - name: FTP-Deploy
-      uses: sebastianpopp/ftp-action@releases/v2
+    - name: FTP Deploy
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.0
       with:
-        host: ${{ secrets.FTP_SERVER }}
-        user: ${{ secrets.FTP_USERNAME }}
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        localDir: "public"
-        remoteDir: "public_html"
+        local-dir: public
+        server-dir: public_html/
+        dangerous-clean-slate: true
