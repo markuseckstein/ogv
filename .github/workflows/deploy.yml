@@ -28,3 +28,6 @@ jobs:
         local-dir: public/
         server-dir: public_html/
         dangerous-clean-slate: true
+        exclude: |
+          ~partytown/
+          **/~partytown/
