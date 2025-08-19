@@ -42,7 +42,7 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
         loading="eager"
       />
 
-      {/* <aside
+      <aside
         style={{
           marginTop: "50px",
           backgroundColor: "#DFFCD6",
@@ -50,12 +50,12 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
           padding: "10px",
         }}
       >
-        <h2>Mostsaison 2024</h2>
+        <h2>Mostsaison 2025</h2>
         <p>
           Mosttermine können ab sofort über unser{" "}
           <Link to="/mosterei">Formular</Link> angefragt werden.
         </p>
-      </aside> */}
+      </aside>
 
       {/* <aside
         style={{
