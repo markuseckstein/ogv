@@ -19,7 +19,7 @@ const MitgliedschaftPage = ({ data }: PageProps<DataProps>) => {
       </p>
 
       <p>
-        Der Mitgliedsbeitrag beträgt 15 € jährlich. Eine Haftpflicht- und
+        Der Mitgliedsbeitrag beträgt 18 € jährlich. Eine Haftpflicht- und
         Unfallversicherung ist im Betrag enthalten.
       </p>
 
