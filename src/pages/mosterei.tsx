@@ -105,15 +105,15 @@ const MostereiPage = ({ data }: PageProps<DataProps>) => {
       </table>
       <br />
 
-      {/* <h2>Mosttermine</h2>
+      <h2>Mosttermine</h2>
       <p>Die Termine für 2025 sind alle ausgebucht.</p>
       <p>
-        Zu gegebener Zeit werden wir hier wieder die Termine für 2025 bekannt
+        Zu gegebener Zeit werden wir hier wieder die Termine für 2026 bekannt
         geben.
-      </p> */}
+      </p>
 
-      <h2>Mosttermine 2025</h2>
-      <p>Die Termine für 2025 sind</p>
+      {/* <h2>Mosttermine 2026</h2>
+      <p>Die Termine für 2026 sind</p>
       <ul>
         <li>Freitag, 12. September</li>
         <li>Samstag, 13. September</li>
@@ -144,7 +144,7 @@ const MostereiPage = ({ data }: PageProps<DataProps>) => {
         marginWidth={0}
       >
         Wird geladen…
-      </iframe>
+      </iframe> */}
     </Layout>
   );
 };

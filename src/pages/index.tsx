@@ -41,7 +41,7 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
         alt="Logo OGV"
         loading="eager"
       />
-
+      {/* 
       <aside
         style={{
           marginTop: "50px",
@@ -54,22 +54,6 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
         <p>
           Mosttermine können ab sofort über unser{" "}
           <Link to="/mosterei">Formular</Link> angefragt werden.
-        </p>
-      </aside>
-
-      {/* <aside
-        style={{
-          marginTop: "50px",
-          backgroundColor: "#f9fcd4",
-          borderRadius: "5px",
-          padding: "10px",
-        }}
-      >
-        <h2>Information für unsere Mitglieder</h2>
-        <p>
-          Zum 31.10.2024 stellt die <strong>Firma Batzner Hagebaumarkt</strong>{" "}
-          in Feucht das Rabattprogramm für Vereine generell - und somit auch für
-          die Mitglieder des OGV ein.
         </p>
       </aside> */}
 
