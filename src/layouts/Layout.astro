@@ -32,7 +32,8 @@ const menuLinks = [
   { name: 'Fotogalerie', link: '/fotogalerie' },
 ];
 
-const currentPath = Astro.url.pathname;
+// Normalize path by removing trailing slash (except for root)
+const currentPath = Astro.url.pathname === '/' ? '/' : Astro.url.pathname.replace(/\/$/, '');
 ---
 
 <!doctype html>
@@ -94,7 +95,7 @@ const currentPath = Astro.url.pathname;
 
     <img
       class="teaser-image"
-      style={`object-position: ${teaserPosition};`}
+      style={`object-position: ${teaserPosition}; width: 100%; object-fit: cover; display: block;`}
       src={teaserImage}
       alt={teaserAltText}
     />
