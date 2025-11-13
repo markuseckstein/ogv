@@ -1,21 +1,33 @@
-name: Build OGV Website on PR
+name: Build on Pull Request
 on: [pull_request]
 
 jobs:
   build:
-    name: Build
+    name: Build and validate
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v5
-    - uses: actions/setup-node@v4
-      with:
-        node-version: 22
-    - name: Install deps
-      run: npm ci --legacy-peer-deps
-    - name: Build site
-      run: npm run build
-    - name: List output files 1
-      run: ls -la
-    - name: List output files 2
-      run: ls -la public
-    
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run TypeScript check
+        run: npm run typecheck
+
+      - name: Build Astro site
+        run: npm run build
+
+      - name: Verify build output
+        run: |
+          echo "Build completed successfully!"
+          echo "Output directory contents:"
+          ls -la dist
+          echo "Total pages built:"
+          find dist -name "*.html" | wc -l

@@ -1,0 +1,38 @@
+---
+const pageStyles = {
+  color: "#232129",
+  padding: "96px",
+  fontFamily: "-apple-system, Roboto, sans-serif, serif",
+};
+
+const headingStyles = {
+  marginTop: 0,
+  marginBottom: "64px",
+  maxWidth: "320px",
+};
+
+const paragraphStyles = {
+  marginBottom: "48px",
+};
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Not found - OGV Pattenhofen-Altenthann e.V.</title>
+  </head>
+  <body>
+    <main style={`color: ${pageStyles.color}; padding: ${pageStyles.padding}; font-family: ${pageStyles.fontFamily};`}>
+      <h1 style={`margin-top: ${headingStyles.marginTop}; margin-bottom: ${headingStyles.marginBottom}; max-width: ${headingStyles.maxWidth};`}>
+        Seite nicht gefunden
+      </h1>
+      <p style={`margin-bottom: ${paragraphStyles.marginBottom};`}>
+        Entschuldigung, wir konnten die gesuchte Seite nicht finden.
+        <br /><br />
+        <a href="/">Zur Startseite</a>
+      </p>
+    </main>
+  </body>
+</html>
