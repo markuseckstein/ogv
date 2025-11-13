@@ -31,7 +31,7 @@ jobs:
         with:
           server: ${{ secrets.FTP_SERVER }}
           protocol: ftps
-          port: 990
+          port: 21
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
