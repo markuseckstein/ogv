@@ -1,5 +1,25 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import CalendarSubscription from '../components/CalendarSubscription.astro';
+import { parse, isPast, startOfDay } from 'date-fns';
+import { veranstaltungen } from '../data/veranstaltungen';
+
+function parseDate(dateString: string) {
+  const [day, month, year] = dateString.split('.').map(x => parseInt(x));
+  return new Date(year, month - 1, day).getTime();
+}
+
+const sortedEvents = [...veranstaltungen].sort((a, b) => parseDate(a.date) - parseDate(b.date));
+
+const today = startOfDay(new Date());
+const upcomingEvents = sortedEvents.filter((item) => {
+  const date = parse(item.date, "dd.MM.yyyy", new Date());
+  return !isPast(startOfDay(date)) || startOfDay(date).getTime() === today.getTime();
+});
+const pastEvents = sortedEvents.filter((item) => {
+  const date = parse(item.date, "dd.MM.yyyy", new Date());
+  return isPast(startOfDay(date)) && startOfDay(date).getTime() !== today.getTime();
+});
 ---
 
 <Layout
@@ -9,63 +29,93 @@ import Layout from '../layouts/Layout.astro';
   teaserAltText="Willkommen beim Obst- und Gartenbauverein Pattenhofen Altenthann e.V."
 >
   <h1>Jahresprogramm 2026</h1>
-  <p>
+  {upcomingEvents.length > 0 && (
     <table>
-      <tr>
-        <td style="white-space: nowrap; vertical-align: top;">
-          12.03.2026
-        </td>
-        <td>Helferessen, 19:00 Uhr, im Gasthaus „Weißes Kreuz"</td>
-      </tr>
-
-      <tr>
-        <td style="white-space: nowrap; vertical-align: top;">
-          20.03.2026
-        </td>
-        <td>
-          Jahreshauptversammlung mit Neuwahl des Vorstandes, 19:00 Uhr im
-          Gasthaus „Weißes Kreuz"
-        </td>
-      </tr>
-
-      <tr>
-        <td style="white-space: nowrap; vertical-align: top;">
-          27.03.2026
-        </td>
-        <td>Flurreinigung, 16:00 Uhr am Weiher</td>
-      </tr>
-
-      <tr>
-        <td style="white-space: nowrap; vertical-align: top;">
-          03.07.2026
-        </td>
-        <td>Vereinsabend, 19:00 Uhr, im Gasthaus „Weißes Kreuz"</td>
-      </tr>
-
-      <tr>
-        <td style="white-space: nowrap; vertical-align: top;">
-          23.07.2026
-        </td>
-        <td>Mostersitzung, 19:00 Uhr</td>
-      </tr>
-
-      <tr>
-        <td style="white-space: nowrap; vertical-align: top;">
-          29.08.2026
-        </td>
-        <td>Obstbaumversteigerung, 14:00 Uhr</td>
-      </tr>
-
-      <tr>
-        <td style="white-space: nowrap; vertical-align: top;">
-          20.09.2026
-        </td>
-        <td>Herbstwanderung</td>
-      </tr>
+      {upcomingEvents.map((event) => (
+        <tr>
+          <td style="white-space: nowrap; vertical-align: top;">
+            {event.date}
+          </td>
+          <td>{event.title}</td>
+        </tr>
+      ))}
     </table>
-  </p>
+  )}
+
+  {pastEvents.length > 0 && (
+    <div class="past-events-section">
+      <button id="togglePastEvents" class="toggle-button">
+        Vergangene Veranstaltungen anzeigen
+      </button>
+
+      <table id="pastEvents" class="hidden">
+        {pastEvents.map((event) => (
+          <tr>
+            <td style="white-space: nowrap; vertical-align: top;">
+              {event.date}
+            </td>
+            <td>{event.title}</td>
+          </tr>
+        ))}
+      </table>
+    </div>
+  )}
+
   <p>
-    Weitere Veranstaltungen die noch nicht terminiert sind werden
-    rechtzeitig in der Tageszeitung veröffentlicht.
+    Weitere Veranstaltungen die noch nicht terminiert sind werden rechtzeitig in
+    der Tageszeitung veröffentlicht.
   </p>
+
+  <CalendarSubscription icsUrl="/veranstaltungen.ics" />
 </Layout>
+
+<style lang="scss">
+  @use "../styles/minima/variables" as *;
+
+  .past-events-section {
+    margin-top: $spacing-unit;
+  }
+
+  .toggle-button {
+    padding: 8px 16px;
+    background-color: $grey-color-light;
+    border: 1px solid $grey-color;
+    border-radius: 4px;
+    color: $text-color;
+    font-size: $base-font-size;
+    font-weight: 500;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $grey-color;
+      color: #fff;
+    }
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  #pastEvents {
+    opacity: 0.6;
+  }
+</style>
+
+<script>
+  const toggleButton = document.getElementById("togglePastEvents");
+  const pastEventsContainer = document.getElementById("pastEvents");
+
+  if (toggleButton && pastEventsContainer) {
+    toggleButton.addEventListener("click", () => {
+      const isHidden = pastEventsContainer.classList.contains("hidden");
+
+      if (isHidden) {
+        pastEventsContainer.classList.remove("hidden");
+        toggleButton.textContent = "Vergangene Veranstaltungen verbergen";
+      } else {
+        pastEventsContainer.classList.add("hidden");
+        toggleButton.textContent = "Vergangene Veranstaltungen anzeigen";
+      }
+    });
+  }
+</script>

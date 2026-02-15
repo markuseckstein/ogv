@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "astro": "^5.17.2",
+    "date-fns": "^4.1.0",
     "sass": "^1.90.0"
   },
   "devDependencies": {

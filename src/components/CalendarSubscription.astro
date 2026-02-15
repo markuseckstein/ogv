@@ -1,0 +1,104 @@
+---
+interface Props {
+  icsUrl: string;
+  title?: string;
+}
+
+const { icsUrl, title = "Kalender abonnieren" } = Astro.props;
+---
+
+<div class="calendar-subscription">
+  <h2>{title}</h2>
+  <p>
+    Abonniere diesen Kalender auf deinem Smartphone oder Computer und erhalte
+    automatisch Benachrichtigungen bei neuen oder geänderten Terminen.
+  </p>
+  <div class="calendar-subscription__actions">
+    <button id="copyCalendarUrl" title="Kopiert die Kalender-URL zum Abonnieren">
+      URL kopieren
+    </button>
+    <a href={icsUrl} download={icsUrl.split("/").pop()}>
+      ICS-Datei laden
+    </a>
+  </div>
+  <p class="calendar-subscription__hint">
+    Mit "URL kopieren" kannst du die Kalender-URL in deiner Kalender-App (Google
+    Calendar, Outlook, Apple, etc.) eintragen und erhältst automatische Updates.
+  </p>
+</div>
+
+<style lang="scss">
+  @use "../styles/minima/variables" as *;
+
+  .calendar-subscription {
+    margin-top: $spacing-unit * 2;
+    padding: $spacing-unit;
+    background-color: $grey-color-light;
+    border: 1px solid $grey-color;
+    border-radius: 4px;
+
+    h2 {
+      margin-top: 0;
+    }
+
+    &__actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+
+      button,
+      a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 20px;
+        font-size: $base-font-size;
+        font-weight: 600;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      button {
+        background-color: $grey-color-dark;
+
+        &:hover {
+          background-color: $text-color;
+        }
+      }
+
+      a {
+        background-color: $grey-color;
+
+        &:hover {
+          background-color: $grey-color-dark;
+          color: #fff;
+        }
+      }
+    }
+
+    &__hint {
+      font-size: $small-font-size;
+      color: $grey-color-dark;
+      margin-bottom: 0;
+    }
+  }
+</style>
+
+<script define:vars={{ icsUrl }}>
+  const copyButton = document.getElementById("copyCalendarUrl");
+  if (copyButton) {
+    copyButton.addEventListener("click", () => {
+      const url = `${window.location.origin}${icsUrl}`;
+      navigator.clipboard.writeText(url).then(() => {
+        const originalText = copyButton.textContent;
+        copyButton.textContent = "Kopiert! \u2713";
+        setTimeout(() => {
+          copyButton.textContent = originalText;
+        }, 3000);
+      });
+    });
+  }
+</script>
