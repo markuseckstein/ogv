@@ -8,10 +8,19 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
+// Fehler in Datei schreiben (zugänglich über Admin-Diagnose)
+function ogvLog(string $msg): void
+{
+    $logFile = __DIR__ . '/data/error.log';
+    $entry   = date('Y-m-d H:i:s') . ' ' . $msg . PHP_EOL;
+    @file_put_contents($logFile, $entry, FILE_APPEND | LOCK_EX);
+    error_log($msg);
+}
+
 // Konfiguration laden (liegt eine Ebene über public_html/)
 $configPath = __DIR__ . '/../ogv_config.php';
 if (!file_exists($configPath)) {
-    error_log("OGV Mosterei: Konfigurationsdatei nicht gefunden: $configPath");
+    ogvLog("OGV Mosterei: Konfigurationsdatei nicht gefunden: $configPath");
     header('Location: /mosterei?fehler=1');
     exit;
 }
@@ -117,7 +126,7 @@ try {
     ]);
 
 } catch (Exception $e) {
-    error_log("OGV Mosterei DB-Fehler: " . $e->getMessage());
+    ogvLog("OGV Mosterei DB-Fehler: " . $e->getMessage());
     header('Location: /mosterei?fehler=1');
     exit;
 }
@@ -144,7 +153,7 @@ try {
 
 } catch (Exception $e) {
     // E-Mail-Fehler ist nicht kritisch – Anfrage ist gespeichert
-    error_log("OGV Mosterei E-Mail-Fehler: " . $e->getMessage());
+    ogvLog("OGV Mosterei E-Mail-Fehler: " . $e->getMessage());
 }
 
 // --- Erfolg ---
