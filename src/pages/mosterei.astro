@@ -216,6 +216,11 @@ import Layout from "../layouts/Layout.astro";
       <label for="bemerkung">Bemerkungen (optional)</label><br />
       <textarea id="bemerkung" name="bemerkung" rows="3" cols="40"></textarea>
     </p>
+    <!-- Honeypot: für Menschen unsichtbar, Bots füllen es aus -->
+    <p aria-hidden="true" style="position:absolute; left:-9999px; top:-9999px; height:0; overflow:hidden;">
+      <label for="website">Website (boo)</label>
+      <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+    </p>
     <p>
       <button type="submit">Anfrage senden</button>
     </p>

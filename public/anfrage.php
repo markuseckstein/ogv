@@ -81,6 +81,16 @@ if ($fehler) {
     exit;
 }
 
+// --- Honeypot-Check ---
+if (postText('website') !== '') {
+    header('Location: /mosterei_bestaetigung');
+    exit;
+}
+
+// --- IP-Subnetz berechnen ---
+$parts     = explode('.', $_SERVER['REMOTE_ADDR'] ?? '');
+$ip_subnet = count($parts) >= 3 ? $parts[0].'.'.$parts[1].'.'.$parts[2] : 'unknown';
+
 // --- Datenbank: Anfrage speichern ---
 
 try {
@@ -109,20 +119,33 @@ try {
         status              TEXT NOT NULL DEFAULT 'offen'
     )");
 
+    $db->exec("ALTER TABLE anfragen ADD COLUMN IF NOT EXISTS ip_subnet TEXT");
+
+    // --- Rate-Limit: max. 5 Einreichungen pro /24-Subnetz in 24 Stunden ---
+    $rateStmt = $db->prepare(
+        "SELECT COUNT(*) FROM anfragen
+          WHERE ip_subnet = ? AND created_at > NOW() - INTERVAL '24 hours'"
+    );
+    $rateStmt->execute([$ip_subnet]);
+    if ((int)$rateStmt->fetchColumn() >= 5) {
+        header('Location: /mosterei?fehler=1');
+        exit;
+    }
+
     $stmt = $db->prepare(
         "INSERT INTO anfragen
             (vorname, nachname, email, telefon,
              gewuenschter_tag, praeferierte_zeit, menge_zentner,
-             mosttyp, abfuellung, bemerkung)
+             mosttyp, abfuellung, bemerkung, ip_subnet)
          VALUES
             (?, ?, ?, ?,
-             ?, ?, ?, ?, ?, ?)"
+             ?, ?, ?, ?, ?, ?, ?)"
     );
 
     $stmt->execute([
         $vorname, $nachname, $email, $telefon,
         $gewuenschter_tag, $praeferierte_zeit, (int)$menge_zentner,
-        $mosttyp, $abfuellung, $bemerkung,
+        $mosttyp, $abfuellung, $bemerkung, $ip_subnet,
     ]);
 
 } catch (Exception $e) {
