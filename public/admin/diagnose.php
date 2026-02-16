@@ -9,7 +9,7 @@ session_start();
 $eingeloggt = !empty($_SESSION['admin_auth']);
 
 // Config laden falls vorhanden (für DB-Test)
-$configPath   = __DIR__ . '/../../ogv_config.php';
+$configPath   = __DIR__ . '/ogv_config.php';
 $configLoaded = false;
 if (file_exists($configPath)) {
     require $configPath;
