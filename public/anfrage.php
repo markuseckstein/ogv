@@ -74,42 +74,40 @@ if ($fehler) {
 
 // --- Datenbank: Anfrage speichern ---
 
-$dbDir  = __DIR__ . '/data';
-$dbPath = $dbDir . '/anfragen2026.db';
-
-if (!is_dir($dbDir)) {
-    mkdir($dbDir, 0750, true);
-}
-
 try {
-    $db = new PDO("sqlite:$dbPath");
+    $dsn = sprintf(
+        'pgsql:host=%s;port=5432;dbname=%s',
+        DB_HOST,
+        DB_NAME
+    );
+    $db = new PDO($dsn, DB_USER, DB_PASS);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $db->exec("CREATE TABLE IF NOT EXISTS anfragen (
-        id                 INTEGER PRIMARY KEY AUTOINCREMENT,
-        created_at         TEXT NOT NULL,
-        vorname            TEXT NOT NULL,
-        nachname           TEXT NOT NULL,
-        email              TEXT NOT NULL,
-        telefon            TEXT NOT NULL,
-        gewuenschter_tag   TEXT NOT NULL,
-        praeferierte_zeit  TEXT NOT NULL,
-        menge_zentner      INTEGER NOT NULL,
-        mosttyp            TEXT NOT NULL,
-        abfuellung         TEXT NOT NULL,
-        bemerkung          TEXT,
+        id                  SERIAL PRIMARY KEY,
+        created_at          TIMESTAMP NOT NULL DEFAULT NOW(),
+        vorname             TEXT NOT NULL,
+        nachname            TEXT NOT NULL,
+        email               TEXT NOT NULL,
+        telefon             TEXT NOT NULL,
+        gewuenschter_tag    TEXT NOT NULL,
+        praeferierte_zeit   TEXT NOT NULL,
+        menge_zentner       INTEGER NOT NULL,
+        mosttyp             TEXT NOT NULL,
+        abfuellung          TEXT NOT NULL,
+        bemerkung           TEXT,
         vereinbarter_termin TEXT,
-        status             TEXT NOT NULL DEFAULT 'offen'
+        status              TEXT NOT NULL DEFAULT 'offen'
     )");
 
     $stmt = $db->prepare(
         "INSERT INTO anfragen
-            (created_at, vorname, nachname, email, telefon,
+            (vorname, nachname, email, telefon,
              gewuenschter_tag, praeferierte_zeit, menge_zentner,
-             mosttyp, abfuellung, bemerkung, status)
+             mosttyp, abfuellung, bemerkung)
          VALUES
-            (datetime('now', 'localtime'), ?, ?, ?, ?,
-             ?, ?, ?, ?, ?, ?, 'offen')"
+            (?, ?, ?, ?,
+             ?, ?, ?, ?, ?, ?)"
     );
 
     $stmt->execute([

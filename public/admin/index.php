@@ -13,15 +13,18 @@ require $configPath;
 
 // --- Datenbank öffnen ---
 
-$dbPath = __DIR__ . '/../data/anfragen2026.db';
-
-function openDb(string $path): PDO
+function openDb(): PDO
 {
-    $db = new PDO("sqlite:$path");
+    $dsn = sprintf(
+        'pgsql:host=%s;port=5432;dbname=%s',
+        DB_HOST,
+        DB_NAME
+    );
+    $db = new PDO($dsn, DB_USER, DB_PASS);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $db->exec("CREATE TABLE IF NOT EXISTS anfragen (
-        id                  INTEGER PRIMARY KEY AUTOINCREMENT,
-        created_at          TEXT NOT NULL,
+        id                  SERIAL PRIMARY KEY,
+        created_at          TIMESTAMP NOT NULL DEFAULT NOW(),
         vorname             TEXT NOT NULL,
         nachname            TEXT NOT NULL,
         email               TEXT NOT NULL,
@@ -68,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
         $erlaubteStatus = ['offen', 'kontaktiert', 'Termin vereinbart'];
 
         if ($id && in_array($status, $erlaubteStatus, true)) {
-            $db = openDb($dbPath);
+            $db = openDb();
             $stmt = $db->prepare(
                 "UPDATE anfragen
                     SET status = ?, vereinbarter_termin = ?, bemerkung = ?
