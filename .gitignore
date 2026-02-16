@@ -25,3 +25,7 @@ pnpm-debug.log*
 
 # vscode setting folders
 .vscode/
+
+# SQLite-Datenbank (liegt nur auf dem Server, nicht im Repo)
+public/data/*.db
+public/data/*.sqlite

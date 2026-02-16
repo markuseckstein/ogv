@@ -1,5 +1,5 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout
@@ -24,8 +24,8 @@ import Layout from '../layouts/Layout.astro';
 
   <p>
     Wir füllen in Beutel und in Ihre eigenen Flaschen ab. Wir empfehlen aus
-    hygienischen und Effizienz-Gründen die Abfüllung in Beutel (3, 5, 10
-    Liter, bei uns erhältlich).
+    hygienischen und Effizienz-Gründen die Abfüllung in Beutel (3, 5, 10 Liter,
+    bei uns erhältlich).
   </p>
   <p>Für die Abfüllung in Ihre eigenen Flaschen achten Sie bitte auf</p>
   <ul>
@@ -38,15 +38,16 @@ import Layout from '../layouts/Layout.astro';
     <strong>max. 25 kg Gesamtgewicht</strong> angeliefert werden.
   </p>
   <p>
-    Von Mostkunden dürfen sich nur 2 Personen als Helfer im Mosthaus
-    aufhalten.
+    Von Mostkunden dürfen sich nur 2 Personen als Helfer im Mosthaus aufhalten.
   </p>
   <h2>Mostpreise</h2>
 
   <table>
     <thead>
       <tr>
-        <th style="text-align: center; padding-left: 10px; padding-right: 10px;">Preise für</th>
+        <th style="text-align: center; padding-left: 10px; padding-right: 10px;"
+          >Preise für</th
+        >
         <th>Mitglieder</th>
         <th>Nicht-Mitglieder</th>
       </tr>
@@ -54,41 +55,64 @@ import Layout from '../layouts/Layout.astro';
     <tbody>
       <tr>
         <td>Most</td>
-        <td style="text-align: center; padding-left: 10px; padding-right: 10px;">22 €</td>
-        <td style="text-align: center; padding-left: 10px; padding-right: 10px;">26 €</td>
+        <td style="text-align: center; padding-left: 10px; padding-right: 10px;"
+          >22 €</td
+        >
+        <td style="text-align: center; padding-left: 10px; padding-right: 10px;"
+          >26 €</td
+        >
       </tr>
       <tr>
         <td>Sauermost</td>
-        <td style="text-align: center; padding-left: 10px; padding-right: 10px;">11 €</td>
-        <td style="text-align: center; padding-left: 10px; padding-right: 10px;">13 €</td>
+        <td style="text-align: center; padding-left: 10px; padding-right: 10px;"
+          >11 €</td
+        >
+        <td style="text-align: center; padding-left: 10px; padding-right: 10px;"
+          >13 €</td
+        >
       </tr>
       <tr>
         <td>Beutel 3 Liter</td>
-        <td style="text-align: center; padding-left: 10px; padding-right: 10px;" colspan="2">
+        <td
+          style="text-align: center; padding-left: 10px; padding-right: 10px;"
+          colspan="2"
+        >
           1,50 €
         </td>
       </tr>
       <tr>
         <td>Beutel 5 Liter</td>
-        <td style="text-align: center; padding-left: 10px; padding-right: 10px;" colspan="2">
+        <td
+          style="text-align: center; padding-left: 10px; padding-right: 10px;"
+          colspan="2"
+        >
           1,90 €
         </td>
       </tr>
       <tr>
         <td>Beutel 10 Liter</td>
-        <td style="text-align: center; padding-left: 10px; padding-right: 10px;" colspan="2">
+        <td
+          style="text-align: center; padding-left: 10px; padding-right: 10px;"
+          colspan="2"
+        >
           2,50 €
         </td>
       </tr>
       <tr>
         <td>Box 5 Liter</td>
-        <td style="text-align: center; padding-left: 10px; padding-right: 10px;" colspan="2">
+        <td
+          style="text-align: center; padding-left: 10px; padding-right: 10px;"
+          colspan="2"
+        >
           3,00 €
         </td>
       </tr>
       <tr>
         <td>Box 10 Liter</td>
-        <td style="text-align: center; padding-left: 10px; padding-right: 10px;" colspan="2">
+        <td
+          style="text-align: center; padding-left: 10px; padding-right: 10px;"
+          colspan="2"
+        >
           5,00 €
         </td>
       </tr>
@@ -96,10 +120,104 @@ import Layout from '../layouts/Layout.astro';
   </table>
   <br />
 
-  <h2>Mosttermine</h2>
+  <h2>Mosttermin anfragen</h2>
+
   <p>Die Termine für 2025 sind alle ausgebucht.</p>
   <p>
-    Zu gegebener Zeit werden wir hier wieder die Termine für 2026 bekannt
-    geben.
+    Zu gegebener Zeit werden wir hier wieder die Termine für 2026 bekannt geben.
   </p>
+
+  <div id="fehler-meldung" style="display:none; color:red; margin-bottom:1em;">
+    Bitte überprüfen Sie Ihre Eingaben und versuchen Sie es erneut.
+  </div>
+  <script>
+    if (new URLSearchParams(window.location.search).get("fehler") === "1") {
+      const el = document.getElementById("fehler-meldung");
+      if (el) el.style.display = "block";
+    }
+  </script>
+
+  <form action="/anfrage.php" method="post">
+    <p>
+      <label for="vorname">Vorname *</label><br />
+      <input type="text" id="vorname" name="vorname" required />
+    </p>
+    <p>
+      <label for="nachname">Nachname *</label><br />
+      <input type="text" id="nachname" name="nachname" required />
+    </p>
+    <p>
+      <label for="email">E-Mail-Adresse *</label><br />
+      <input type="email" id="email" name="email" required />
+    </p>
+    <p>
+      <label for="telefon">Telefonnummer *</label><br />
+      <input type="tel" id="telefon" name="telefon" required />
+    </p>
+    <p>
+      <label for="gewuenschter_tag"
+        >Gewünschter Tag (Freitext, z.&nbsp;B. „zweite Septemberwoche") *</label
+      ><br />
+      <input
+        type="text"
+        id="gewuenschter_tag"
+        name="gewuenschter_tag"
+        required
+        placeholder="z. B. zweite Septemberwoche"
+      />
+    </p>
+    <p>Präferierte Zeit *</p>
+    <p>
+      <label
+        ><input
+          type="radio"
+          name="praeferierte_zeit"
+          value="Vormittags"
+          required
+        /> Vormittags</label
+      >
+      &nbsp;&nbsp;
+      <label
+        ><input type="radio" name="praeferierte_zeit" value="Nachmittags" /> Nachmittags</label
+      >
+    </p>
+    <p>
+      <label for="menge_zentner">Äpfel in Zentner (ca. 50 kg) *</label><br />
+      <input
+        type="number"
+        id="menge_zentner"
+        name="menge_zentner"
+        min="1"
+        required
+      />
+    </p>
+    <p>Mosttyp *</p>
+    <p>
+      <label
+        ><input type="radio" name="mosttyp" value="Süßmost" required /> Süßmost</label
+      >
+      &nbsp;&nbsp;
+      <label
+        ><input type="radio" name="mosttyp" value="Sauermost" /> Sauermost</label
+      >
+    </p>
+    <p>Abfüllung *</p>
+    <p>
+      <label
+        ><input type="radio" name="abfuellung" value="Beutel" required /> Beutel
+        (empfohlen)</label
+      >
+      &nbsp;&nbsp;
+      <label
+        ><input type="radio" name="abfuellung" value="Flaschen" /> Eigene Flaschen</label
+      >
+    </p>
+    <p>
+      <label for="bemerkung">Bemerkungen (optional)</label><br />
+      <textarea id="bemerkung" name="bemerkung" rows="3" cols="40"></textarea>
+    </p>
+    <p>
+      <button type="submit">Anfrage senden</button>
+    </p>
+  </form>
 </Layout>
