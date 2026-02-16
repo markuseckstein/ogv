@@ -18,10 +18,10 @@ function ogvLog(string $msg): void
 }
 
 // Konfiguration laden (liegt eine Ebene über public_html/)
-$configPath = __DIR__ . '/../ogv_config.php';
+$configPath = __DIR__ . '/admin/ogv_config.php';
 if (!file_exists($configPath)) {
-    ogvLog("OGV Mosterei: Konfigurationsdatei nicht gefunden: $configPath");
-    header('Location: /mosterei?fehler=1&msg=' . urlencode($configPath));
+    ogvLog("OGV Mosterei Anfrage.php: Konfigurationsdatei nicht gefunden: $configPath");
+    header('Location: /mosterei?fehler=1&msg=configpath');
     exit;
 }
 require $configPath;
