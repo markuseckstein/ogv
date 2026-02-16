@@ -5,7 +5,7 @@ declare(strict_types=1);
 session_start();
 
 // Konfiguration laden (zwei Ebenen über public_html/admin/)
-$configPath = __DIR__ . '/../../ogv_config.php';
+$configPath = __DIR__ . '/../ogv_config.php';
 if (!file_exists($configPath)) {
     die('Konfigurationsdatei nicht gefunden. Bitte ogv_config.php einrichten in ' . $configPath);
 }

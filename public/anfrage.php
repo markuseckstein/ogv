@@ -21,7 +21,7 @@ function ogvLog(string $msg): void
 $configPath = __DIR__ . '/../ogv_config.php';
 if (!file_exists($configPath)) {
     ogvLog("OGV Mosterei: Konfigurationsdatei nicht gefunden: $configPath");
-    header('Location: /mosterei?fehler=1');
+    header('Location: /mosterei?fehler=1&msg=' . urlencode($configPath));
     exit;
 }
 require $configPath;
