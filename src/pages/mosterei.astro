@@ -37,9 +37,6 @@ import Layout from "../layouts/Layout.astro";
     Das angelieferte Obst soll in Säcken oder Kisten mit{" "}
     <strong>max. 25 kg Gesamtgewicht</strong> angeliefert werden.
   </p>
-  <p>
-    Von Mostkunden dürfen sich nur 2 Personen als Helfer im Mosthaus aufhalten.
-  </p>
   <h2>Mostpreise</h2>
 
   <table>
@@ -127,7 +124,7 @@ import Layout from "../layouts/Layout.astro";
     Zu gegebener Zeit werden wir hier wieder die Termine für 2026 bekannt geben.
   </p>
 
-  <div id="fehler-meldung" style="display:none; color:red; margin-bottom:1em;">
+  <!-- <div id="fehler-meldung" style="display:none; color:red; margin-bottom:1em;">
     Bitte überprüfen Sie Ihre Eingaben und versuchen Sie es erneut.
   </div>
   <script>
@@ -182,7 +179,7 @@ import Layout from "../layouts/Layout.astro";
       >
     </p>
     <p>
-      <label for="menge_zentner">Äpfel in Zentner (ca. 50 kg) *</label><br />
+      <label for="menge_zentner">Äpfel in Zentner *</label><br />
       <input
         type="number"
         id="menge_zentner"
@@ -216,7 +213,6 @@ import Layout from "../layouts/Layout.astro";
       <label for="bemerkung">Bemerkungen (optional)</label><br />
       <textarea id="bemerkung" name="bemerkung" rows="3" cols="40"></textarea>
     </p>
-    <!-- Honeypot: für Menschen unsichtbar, Bots füllen es aus -->
     <p aria-hidden="true" style="position:absolute; left:-9999px; top:-9999px; height:0; overflow:hidden;">
       <label for="website">Website (boo)</label>
       <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
@@ -224,5 +220,5 @@ import Layout from "../layouts/Layout.astro";
     <p>
       <button type="submit">Anfrage senden</button>
     </p>
-  </form>
+  </form> -->
 </Layout>
