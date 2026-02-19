@@ -9,7 +9,7 @@ import type { Veranstaltung } from "../data/veranstaltungen";
 export function generateUID(event: Veranstaltung): string {
   const hash = crypto
     .createHash("sha1")
-    .update(`${event.date}${event.title}`)
+    .update(`${event.datum}${event.titel}`)
     .digest("hex");
   return `${hash}@ogv-altenthann-pattenhofen.de`;
 }
@@ -37,8 +37,8 @@ export function generateICS(
   const timestamp = format(now, "yyyyMMdd'T'HHmmss'Z'", { locale: de });
 
   const sortedEvents = [...events].sort((a, b) => {
-    const [aDay, aMonth, aYear] = a.date.split(".").map((x) => parseInt(x));
-    const [bDay, bMonth, bYear] = b.date.split(".").map((x) => parseInt(x));
+    const [aDay, aMonth, aYear] = a.datum.split(".").map((x) => parseInt(x));
+    const [bDay, bMonth, bYear] = b.datum.split(".").map((x) => parseInt(x));
     const aDate = new Date(aYear, aMonth - 1, aDay);
     const bDate = new Date(bYear, bMonth - 1, bDay);
     return aDate.getTime() - bDate.getTime();
@@ -47,10 +47,10 @@ export function generateICS(
   const vevents = sortedEvents
     .map((event) => {
       const uid = generateUID(event);
-      const dtstart = formatDateForICS(event.date);
+      const dtstart = formatDateForICS(event.datum);
 
       // All-day event: end date is next day
-      const [day, month, year] = event.date.split(".").map((x) => parseInt(x));
+      const [day, month, year] = event.datum.split(".").map((x) => parseInt(x));
       const endDate = new Date(year, month - 1, day + 1);
       const yyyy = endDate.getFullYear();
       const mm = String(endDate.getMonth() + 1).padStart(2, "0");
@@ -62,7 +62,7 @@ UID:${uid}
 DTSTAMP:${timestamp}
 DTSTART;VALUE=DATE:${dtstart}
 DTEND;VALUE=DATE:${dtend}
-SUMMARY:${event.title}
+SUMMARY:${event.titel}
 DESCRIPTION:OGV Pattenhofen-Altenthann e.V.
 END:VEVENT`;
     })

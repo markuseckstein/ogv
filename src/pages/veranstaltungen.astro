@@ -9,15 +9,15 @@ function parseDate(dateString: string) {
   return new Date(year, month - 1, day).getTime();
 }
 
-const sortedEvents = [...veranstaltungen].sort((a, b) => parseDate(a.date) - parseDate(b.date));
+const sortedEvents = [...veranstaltungen].sort((a, b) => parseDate(a.datum) - parseDate(b.datum));
 
 const today = startOfDay(new Date());
 const upcomingEvents = sortedEvents.filter((item) => {
-  const date = parse(item.date, "dd.MM.yyyy", new Date());
+  const date = parse(item.datum, "dd.MM.yyyy", new Date());
   return !isPast(startOfDay(date)) || startOfDay(date).getTime() === today.getTime();
 });
 const pastEvents = sortedEvents.filter((item) => {
-  const date = parse(item.date, "dd.MM.yyyy", new Date());
+  const date = parse(item.datum, "dd.MM.yyyy", new Date());
   return isPast(startOfDay(date)) && startOfDay(date).getTime() !== today.getTime();
 });
 ---
@@ -34,9 +34,9 @@ const pastEvents = sortedEvents.filter((item) => {
       {upcomingEvents.map((event) => (
         <tr>
           <td style="white-space: nowrap; vertical-align: top;">
-            {event.date}
+            {event.datum}
           </td>
-          <td>{event.title}</td>
+          <td>{event.titel}</td>
         </tr>
       ))}
     </table>
@@ -52,9 +52,9 @@ const pastEvents = sortedEvents.filter((item) => {
         {pastEvents.map((event) => (
           <tr>
             <td style="white-space: nowrap; vertical-align: top;">
-              {event.date}
+              {event.datum}
             </td>
-            <td>{event.title}</td>
+            <td>{event.titel}</td>
           </tr>
         ))}
       </table>
