@@ -1,0 +1,122 @@
+---
+import { parse, isPast, startOfDay, format } from 'date-fns';
+import { de } from 'date-fns/locale';
+import { ankuendigungen } from '../data/ankuendigungen';
+
+const today = startOfDay(new Date());
+
+const upcoming = ankuendigungen.filter((a) => {
+  const date = parse(a.datum, 'dd.MM.yyyy', new Date());
+  return !isPast(startOfDay(date)) || startOfDay(date).getTime() === today.getTime();
+});
+---
+
+{upcoming.length > 0 && (
+  <section class="ankuendigungen">
+    <h2>Nächste Veranstaltungen</h2>
+    <ul class="ankuendigungen__liste">
+      {upcoming.map((a) => {
+        const date = parse(a.datum, 'dd.MM.yyyy', new Date());
+        const datumFormatiert = format(date, 'EEEE, d. MMMM yyyy', { locale: de });
+        return (
+          <li class="ankuendigung">
+            <p class="ankuendigung__datum">{datumFormatiert}</p>
+            <p class="ankuendigung__titel">{a.titel}</p>
+            {(a.uhrzeit || a.ort) && (
+              <p class="ankuendigung__details">
+                {[a.uhrzeit, a.ort].filter(Boolean).join(' · ')}
+              </p>
+            )}
+            {a.hinweis && (
+              <p class="ankuendigung__hinweis">{a.hinweis}</p>
+            )}
+          </li>
+        );
+      })}
+    </ul>
+    <p class="ankuendigungen__mehr">
+      <a href="/veranstaltungen">Alle Veranstaltungen →</a>
+    </p>
+  </section>
+)}
+
+<style lang="scss">
+  @use "../styles/minima/variables" as *;
+
+  .ankuendigungen {
+    margin-top: $spacing-unit * 1.5;
+    padding: $spacing-unit;
+    background-color: #f4f9f0;
+    border-left: 4px solid #5a8a3c;
+    border-radius: 0 4px 4px 0;
+
+    h2 {
+      margin-top: 0;
+      color: #3d6028;
+      font-size: $base-font-size * 1.15;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+  }
+
+  .ankuendigungen__liste {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-unit * 0.75;
+  }
+
+  .ankuendigung {
+    padding-bottom: $spacing-unit * 0.75;
+    border-bottom: 1px solid #c8ddb8;
+
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    p {
+      margin: 0 0 4px;
+    }
+  }
+
+  .ankuendigung__datum {
+    font-size: $small-font-size;
+    color: #5a8a3c;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+
+  .ankuendigung__titel {
+    font-size: $base-font-size * 1.1;
+    font-weight: 700;
+    color: $text-color;
+  }
+
+  .ankuendigung__details {
+    font-size: $small-font-size;
+    color: $grey-color-dark;
+  }
+
+  .ankuendigung__hinweis {
+    font-size: $small-font-size;
+    color: $grey-color;
+    font-style: italic;
+  }
+
+  .ankuendigungen__mehr {
+    margin: $spacing-unit * 0.5 0 0;
+
+    a {
+      font-size: $small-font-size;
+      color: #5a8a3c;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+</style>
