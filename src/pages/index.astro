@@ -1,5 +1,6 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Ankuendigungen from "../components/Ankuendigungen.astro";
 ---
 
 <Layout
@@ -19,26 +20,19 @@ import Layout from '../layouts/Layout.astro';
     Infos über Verein, Arbeit, Veranstaltungen und Geräte.
   </p>
   <p>
-    Viel Spaß beim Durchschauen. Vielleicht haben wir Ihr Interesse geweckt
-    und sehen Sie bald bei einer unserer Veranstaltungen.
+    Viel Spaß beim Durchschauen. Vielleicht haben wir Ihr Interesse geweckt und
+    sehen Sie bald bei einer unserer Veranstaltungen.
   </p>
   <p>
     Ihr
     <br /> Gartenbauverein
   </p>
-  <img
-    src="/images/ogv_logo.gif"
-    alt="Logo OGV"
-    loading="eager"
-  />
+
+  <img src="/images/ogv_logo.gif" alt="Logo OGV" loading="eager" />
 
   <br />
 
-  <a href="/leader_tafel">
-    <img
-      alt="LEADER Projekttafel (Printversion)"
-      src="/images/leader/leader_tafel.jpg"
-      style="border-radius: 5px;"
-    />
-  </a>
+  <Ankuendigungen />
+
+  
 </Layout>
