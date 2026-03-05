@@ -22,6 +22,10 @@ export const veranstaltungen: Veranstaltung[] = [
     titel: 'Vereinsabend, 19:00 Uhr, im Gasthaus „Weißes Kreuz"',
   },
   {
+    datum: "08.05.2026",
+    titel: "Kräuterwanderung, 16:00 Uhr. Treffpunkt wird noch bekannt gegeben.",
+  },
+  {
     datum: "23.07.2026",
     titel: "Mostersitzung, 19:00 Uhr",
   },
