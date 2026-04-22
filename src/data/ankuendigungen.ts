@@ -34,4 +34,11 @@ export const ankuendigungen: Ankuendigung[] = [
     ort: "Treffpunkt am Dorfweiher, Altenthann",
     hinweis: 'Im Rahmen der „Kehrd wärd"-Aktion der Gemeinde Schwarzenbruck',
   },
+  {
+    datum: "08.05.2026",
+    titel: "Kräuterwanderung mit Fr. Anita Schrödel",
+    uhrzeit: "Abfahrt 16:00 Uhr",
+    ort: "Treffpunkt am Weiher in Altenthann",
+    hinweis: "Wanderung in Lindelburg (Oberdorf 5) ab 16:30 Uhr. Mitglieder und alle Naturfreunde herzlich willkommen!",
+  },
 ];

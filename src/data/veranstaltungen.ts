@@ -23,7 +23,7 @@ export const veranstaltungen: Veranstaltung[] = [
   },
   {
     datum: "08.05.2026",
-    titel: "Kräuterwanderung, 16:00 Uhr. Treffpunkt wird noch bekannt gegeben.",
+    titel: "Kräuterwanderung mit Fr. Anita Schrödel in Lindelburg. Abfahrt 16:00 Uhr am Weiher in Altenthann, Start der Wanderung 16:30 Uhr in Lindelburg (Oberdorf 5).",
   },
   {
     datum: "23.07.2026",
