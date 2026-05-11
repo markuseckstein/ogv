@@ -1,6 +1,8 @@
 ---
 import '../styles/main.scss';
 import '../components/layout.scss';
+import { Picture } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 
 interface Props {
   title: string;
@@ -17,6 +19,13 @@ const {
   teaserPosition = '50% 50%',
   teaserAltText = 'Teaser Bild'
 } = Astro.props;
+
+const images = import.meta.glob<ImageMetadata>('../images/*.jpg', { eager: true, import: 'default' });
+const filename = teaserImage.split('/').pop();
+const imageSrc = images[`../images/${filename}`];
+if (!imageSrc) {
+  throw new Error(`Teaser image not found: "${teaserImage}". Add the file to src/images/.`);
+}
 
 const year = new Date().getFullYear();
 
@@ -93,10 +102,13 @@ const currentPath = Astro.url.pathname === '/' ? '/' : Astro.url.pathname.replac
       </div>
     </header>
 
-    <img
+    <Picture
+      src={imageSrc}
+      formats={['avif', 'webp']}
+      widths={[400, 800, 1200, 1920]}
+      sizes="100vw"
       class="teaser-image"
       style={`object-position: ${teaserPosition}; width: 100%; object-fit: cover; display: block;`}
-      src={teaserImage}
       alt={teaserAltText}
     />
     <main class="content">

@@ -1,5 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import presseEinbau01 from '@/images/leader/presse_einbau01.jpg';
+import presseEinbau02 from '@/images/leader/presse_einbau02.jpg';
 ---
 
 <Layout
@@ -58,16 +61,10 @@ import Layout from '../layouts/Layout.astro';
   </p>
   <section>
     <p>
-      <img
-        alt="Anlieferung der neuen Presse"
-        src="/images/leader/presse_einbau01.jpg"
-      />
+      <Image src={presseEinbau01} alt="Anlieferung der neuen Presse" style="max-width: 100%; height: auto; display: block;" />
     </p>
     <p>
-      <img
-        alt="Einbau der neuen Presse"
-        src="/images/leader/presse_einbau02.jpg"
-      />
+      <Image src={presseEinbau02} alt="Einbau der neuen Presse" style="max-width: 100%; height: auto; display: block;" />
     </p>
   </section>
 </Layout>

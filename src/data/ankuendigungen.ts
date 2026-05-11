@@ -39,6 +39,7 @@ export const ankuendigungen: Ankuendigung[] = [
     titel: "Kräuterwanderung mit Fr. Anita Schrödel",
     uhrzeit: "Abfahrt 16:00 Uhr",
     ort: "Treffpunkt am Weiher in Altenthann",
-    hinweis: "Wanderung in Lindelburg (Oberdorf 5) ab 16:30 Uhr. Mitglieder und alle Naturfreunde herzlich willkommen!",
+    hinweis:
+      "Wanderung in Lindelburg (Oberdorf 5) ab 16:30 Uhr. Mitglieder und alle Naturfreunde herzlich willkommen!",
   },
 ];
