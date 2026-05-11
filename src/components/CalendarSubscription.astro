@@ -87,7 +87,7 @@ const { icsUrl, title = "Kalender abonnieren" } = Astro.props;
   }
 </style>
 
-<script define:vars={{ icsUrl }}>
+<script is:inline define:vars={{ icsUrl }}>
   const copyButton = document.getElementById("copyCalendarUrl");
   if (copyButton) {
     copyButton.addEventListener("click", () => {

@@ -23,7 +23,7 @@ const sortedEvents = [...veranstaltungen].sort((a, b) => parseDate(a.datum) - pa
   teaserAltText="Willkommen beim Obst- und Gartenbauverein Pattenhofen Altenthann e.V."
 >
   <h1>Jahresprogramm 2026</h1>
-  <table id="eventsTable">
+  <table id="eventsTable" style="margin-bottom: 1rem">
     {sortedEvents.map((event) => (
       <tr data-date={toIsoDate(event.datum)}>
         <td style="white-space: nowrap; vertical-align: top;">
@@ -34,10 +34,12 @@ const sortedEvents = [...veranstaltungen].sort((a, b) => parseDate(a.datum) - pa
     ))}
   </table>
 
-  <div class="past-events-section" id="pastEventsSection">
-    <button id="togglePastEvents" class="toggle-button">
+
+  <button id="togglePastEvents" class="toggle-button">
       Vergangene Veranstaltungen anzeigen
     </button>
+  <div class="past-events-section" id="pastEventsSection">
+    
   </div>
 
   <p>
@@ -64,6 +66,7 @@ const sortedEvents = [...veranstaltungen].sort((a, b) => parseDate(a.datum) - pa
     color: $text-color;
     font-size: $base-font-size;
     font-weight: 500;
+    margin-bottom: 1rem;
     cursor: pointer;
 
     &:hover {
