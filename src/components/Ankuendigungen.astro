@@ -1,25 +1,23 @@
 ---
-import { parse, isPast, startOfDay, format } from 'date-fns';
+import { parse, format } from 'date-fns';
 import { de } from 'date-fns/locale';
 import { ankuendigungen } from '../data/ankuendigungen';
 
-const today = startOfDay(new Date());
-
-const upcoming = ankuendigungen.filter((a) => {
-  const date = parse(a.datum, 'dd.MM.yyyy', new Date());
-  return !isPast(startOfDay(date)) || startOfDay(date).getTime() === today.getTime();
-});
+function toIsoDate(datum: string): string {
+  const [day, month, year] = datum.split('.');
+  return `${year}-${month}-${day}`;
+}
 ---
 
-{upcoming.length > 0 && (
-  <section class="ankuendigungen">
+{ankuendigungen.length > 0 && (
+  <section class="ankuendigungen" id="ankuendigungen">
     <h2>Nächste Veranstaltungen</h2>
     <ul class="ankuendigungen__liste">
-      {upcoming.map((a) => {
+      {ankuendigungen.map((a) => {
         const date = parse(a.datum, 'dd.MM.yyyy', new Date());
         const datumFormatiert = format(date, 'EEEE, d. MMMM yyyy', { locale: de });
         return (
-          <li class="ankuendigung">
+          <li class="ankuendigung" data-date={toIsoDate(a.datum)}>
             <p class="ankuendigung__datum">{datumFormatiert}</p>
             <p class="ankuendigung__titel">{a.titel}</p>
             {(a.uhrzeit || a.ort) && (
@@ -39,6 +37,30 @@ const upcoming = ankuendigungen.filter((a) => {
     </p>
   </section>
 )}
+
+<script>
+  const today = new Date();
+  const todayStart = new Date(today.getFullYear(), today.getMonth(), today.getDate()).getTime();
+
+  const section = document.getElementById('ankuendigungen');
+  if (section) {
+    const items = Array.from(section.querySelectorAll<HTMLElement>('.ankuendigung[data-date]'));
+    let visibleCount = 0;
+
+    items.forEach(item => {
+      const [year, month, day] = item.dataset.date!.split('-').map(Number);
+      if (new Date(year, month - 1, day).getTime() < todayStart) {
+        item.style.display = 'none';
+      } else {
+        visibleCount++;
+      }
+    });
+
+    if (visibleCount === 0) {
+      section.style.display = 'none';
+    }
+  }
+</script>
 
 <style lang="scss">
   @use "../styles/minima/variables" as *;

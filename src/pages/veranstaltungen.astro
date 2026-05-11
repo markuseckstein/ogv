@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import CalendarSubscription from '../components/CalendarSubscription.astro';
-import { parse, isPast, startOfDay } from 'date-fns';
 import { veranstaltungen } from '../data/veranstaltungen';
 
 function parseDate(dateString: string) {
@@ -9,17 +8,12 @@ function parseDate(dateString: string) {
   return new Date(year, month - 1, day).getTime();
 }
 
-const sortedEvents = [...veranstaltungen].sort((a, b) => parseDate(a.datum) - parseDate(b.datum));
+function toIsoDate(datum: string): string {
+  const [day, month, year] = datum.split('.');
+  return `${year}-${month}-${day}`;
+}
 
-const today = startOfDay(new Date());
-const upcomingEvents = sortedEvents.filter((item) => {
-  const date = parse(item.datum, "dd.MM.yyyy", new Date());
-  return !isPast(startOfDay(date)) || startOfDay(date).getTime() === today.getTime();
-});
-const pastEvents = sortedEvents.filter((item) => {
-  const date = parse(item.datum, "dd.MM.yyyy", new Date());
-  return isPast(startOfDay(date)) && startOfDay(date).getTime() !== today.getTime();
-});
+const sortedEvents = [...veranstaltungen].sort((a, b) => parseDate(a.datum) - parseDate(b.datum));
 ---
 
 <Layout
@@ -29,37 +23,22 @@ const pastEvents = sortedEvents.filter((item) => {
   teaserAltText="Willkommen beim Obst- und Gartenbauverein Pattenhofen Altenthann e.V."
 >
   <h1>Jahresprogramm 2026</h1>
-  {upcomingEvents.length > 0 && (
-    <table>
-      {upcomingEvents.map((event) => (
-        <tr>
-          <td style="white-space: nowrap; vertical-align: top;">
-            {event.datum}
-          </td>
-          <td>{event.titel}</td>
-        </tr>
-      ))}
-    </table>
-  )}
+  <table id="eventsTable">
+    {sortedEvents.map((event) => (
+      <tr data-date={toIsoDate(event.datum)}>
+        <td style="white-space: nowrap; vertical-align: top;">
+          {event.datum}
+        </td>
+        <td>{event.titel}</td>
+      </tr>
+    ))}
+  </table>
 
-  {pastEvents.length > 0 && (
-    <div class="past-events-section">
-      <button id="togglePastEvents" class="toggle-button">
-        Vergangene Veranstaltungen anzeigen
-      </button>
-
-      <table id="pastEvents" class="hidden">
-        {pastEvents.map((event) => (
-          <tr>
-            <td style="white-space: nowrap; vertical-align: top;">
-              {event.datum}
-            </td>
-            <td>{event.titel}</td>
-          </tr>
-        ))}
-      </table>
-    </div>
-  )}
+  <div class="past-events-section" id="pastEventsSection">
+    <button id="togglePastEvents" class="toggle-button">
+      Vergangene Veranstaltungen anzeigen
+    </button>
+  </div>
 
   <p>
     Weitere Veranstaltungen die noch nicht terminiert sind werden rechtzeitig in
@@ -74,6 +53,7 @@ const pastEvents = sortedEvents.filter((item) => {
 
   .past-events-section {
     margin-top: $spacing-unit;
+    display: none;
   }
 
   .toggle-button {
@@ -92,30 +72,44 @@ const pastEvents = sortedEvents.filter((item) => {
     }
   }
 
-  .hidden {
+  tr.past-event {
     display: none;
+    opacity: 0.6;
   }
 
-  #pastEvents {
-    opacity: 0.6;
+  tr.past-event.visible {
+    display: table-row;
   }
 </style>
 
 <script>
-  const toggleButton = document.getElementById("togglePastEvents");
-  const pastEventsContainer = document.getElementById("pastEvents");
+  const today = new Date();
+  const todayStart = new Date(today.getFullYear(), today.getMonth(), today.getDate()).getTime();
 
-  if (toggleButton && pastEventsContainer) {
-    toggleButton.addEventListener("click", () => {
-      const isHidden = pastEventsContainer.classList.contains("hidden");
+  const rows = Array.from(document.querySelectorAll<HTMLTableRowElement>('#eventsTable tr[data-date]'));
+  const pastRows: HTMLTableRowElement[] = [];
 
-      if (isHidden) {
-        pastEventsContainer.classList.remove("hidden");
-        toggleButton.textContent = "Vergangene Veranstaltungen verbergen";
-      } else {
-        pastEventsContainer.classList.add("hidden");
-        toggleButton.textContent = "Vergangene Veranstaltungen anzeigen";
-      }
+  rows.forEach(row => {
+    const [year, month, day] = row.dataset.date!.split('-').map(Number);
+    if (new Date(year, month - 1, day).getTime() < todayStart) {
+      row.classList.add('past-event');
+      pastRows.push(row);
+    }
+  });
+
+  const pastSection = document.getElementById('pastEventsSection');
+  if (pastRows.length > 0 && pastSection) {
+    pastSection.style.display = '';
+  }
+
+  const toggleButton = document.getElementById('togglePastEvents');
+  if (toggleButton) {
+    toggleButton.addEventListener('click', () => {
+      const isShowing = toggleButton.textContent?.includes('verbergen');
+      pastRows.forEach(row => row.classList.toggle('visible', !isShowing));
+      toggleButton.textContent = isShowing
+        ? 'Vergangene Veranstaltungen anzeigen'
+        : 'Vergangene Veranstaltungen verbergen';
     });
   }
 </script>
