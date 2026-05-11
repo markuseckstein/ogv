@@ -1,7 +1,3 @@
-# CLAUDE.md
-
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
-
 ## Project Overview
 
 Static website for OGV Pattenhofen-Altenthann e.V. (a German fruit and garden association), built with Astro 5.0. The site is fully static with no CMS — all content is hardcoded in Astro components. All page content is in German.
@@ -18,11 +14,11 @@ Static website for OGV Pattenhofen-Altenthann e.V. (a German fruit and garden as
 | `npm run format` | Format code with Prettier |
 | `npm run preview` | Preview production build locally |
 
-There are no tests configured.
+No tests.
 
 ## Architecture
 
-**Framework:** Astro 5.0 with file-based routing. Zero client-side JavaScript shipped.
+**Framework:** Astro 6.0 with file-based routing. Zero client-side JavaScript shipped.
 
 **Page pattern:** Every page in `src/pages/` follows the same structure — import `Layout.astro`, pass props (`title`, `teaserImage`, `teaserPosition`, `teaserAltText`), and provide HTML content in the slot.
 
