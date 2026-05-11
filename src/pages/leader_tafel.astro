@@ -1,5 +1,6 @@
 ---
-// Leader tafel display page
+import { Image } from 'astro:assets';
+import leaderTafel from '@/images/leader/leader_tafel.jpg';
 ---
 
 <!doctype html>
@@ -11,10 +12,10 @@
   </head>
   <body style="margin: 0; padding: 0;">
     <main style="width: 100%;">
-      <img
-        src="/images/leader/leader_tafel.jpg"
+      <Image
+        src={leaderTafel}
         alt="LEADER Fördertafel (Printversion)"
-        style="width: 100%; display: block;"
+        style="width: 100%; height: auto; display: block;"
       />
     </main>
   </body>

@@ -1,5 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import chronikImg01 from '@/images/kurzchronik-01.jpg';
+import chronikImg02 from '@/images/kurzchronik-02.jpg';
 ---
 
 <Layout
@@ -19,10 +22,10 @@ import Layout from '../layouts/Layout.astro';
     Pickel aus Pattenhofen.
   </p>
   <p>
-    <img src="/images/kurzchronik-01.jpg" alt="Kurzchronik 1" />
+    <Image src={chronikImg01} alt="Kurzchronik 1" style="max-width: 100%; height: auto;" />
   </p>
   <p>
-    <img src="/images/kurzchronik-02.jpg" alt="Kurzchronik 2" />
+    <Image src={chronikImg02} alt="Kurzchronik 2" style="max-width: 100%; height: auto;" />
   </p>
   <p>
     Der Verein stieß auf großes Interesse in der Bevölkerung. Viele neue

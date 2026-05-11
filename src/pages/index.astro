@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Ankuendigungen from "../components/Ankuendigungen.astro";
+import { Image } from 'astro:assets';
+import ogvLogo from '@/images/ogv_logo.gif';
 ---
 
 <Layout
@@ -28,7 +30,7 @@ import Ankuendigungen from "../components/Ankuendigungen.astro";
     <br /> Gartenbauverein
   </p>
 
-  <img src="/images/ogv_logo.gif" alt="Logo OGV" loading="eager" />
+  <Image src={ogvLogo} alt="Logo OGV" loading="eager" />
 
   <br />
 

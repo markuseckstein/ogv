@@ -1,5 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from 'astro:assets';
+import leaderTafel from '@/images/leader/leader_tafel.jpg';
 ---
 
 <Layout
@@ -225,10 +227,10 @@ import Layout from "../layouts/Layout.astro";
   <hr />
   <p style="margin-top: 1rem">
     <a href="/leader_tafel">
-      <img
+      <Image
+        src={leaderTafel}
         alt="LEADER Projekttafel (Printversion)"
-        src="/images/leader/leader_tafel.jpg"
-        style="border-radius: 5px;"
+        style="border-radius: 5px; max-width: 100%; height: auto;"
       />
     </a>
   </p>
