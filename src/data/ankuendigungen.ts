@@ -42,4 +42,10 @@ export const ankuendigungen: Ankuendigung[] = [
     hinweis:
       "Wanderung in Lindelburg (Oberdorf 5) ab 16:30 Uhr. Mitglieder und alle Naturfreunde herzlich willkommen!",
   },
+  {
+    datum: "11.07.2026",
+    titel: "Sommerschnittkurs",
+    uhrzeit: "15:00 Uhr",
+    ort: "Vereinsheim des OGV Winkelhaid",
+  },
 ];
