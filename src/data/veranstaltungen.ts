@@ -27,6 +27,10 @@ export const veranstaltungen: Veranstaltung[] = [
       "Kräuterwanderung mit Fr. Anita Schrödel in Lindelburg. Abfahrt 16:00 Uhr am Weiher in Altenthann, Start der Wanderung 16:30 Uhr in Lindelburg (Oberdorf 5).",
   },
   {
+    datum: "11.07.2026",
+    titel: "Sommerschnittkurs, 15:00 Uhr, Vereinsheim des OGV Winkelhaid",
+  },
+  {
     datum: "23.07.2026",
     titel: "Mostersitzung, 19:00 Uhr",
   },
