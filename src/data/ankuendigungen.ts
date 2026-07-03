@@ -45,7 +45,7 @@ export const ankuendigungen: Ankuendigung[] = [
   {
     datum: "11.07.2026",
     titel: "Sommerschnittkurs",
-    uhrzeit: "15:00 Uhr",
-    ort: "Vereinsheim des OGV Winkelhaid",
+    uhrzeit: "14:00 Uhr",
+    ort: "Obstwiese des OGV Winkelhaid",
   },
 ];
