@@ -28,7 +28,7 @@ export const veranstaltungen: Veranstaltung[] = [
   },
   {
     datum: "11.07.2026",
-    titel: "Sommerschnittkurs, 15:00 Uhr, Vereinsheim des OGV Winkelhaid",
+    titel: "Sommerschnittkurs, 14:00 Uhr, Obs des OGV Winkelhaid",
   },
   {
     datum: "23.07.2026",
