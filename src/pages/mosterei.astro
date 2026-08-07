@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Image } from 'astro:assets';
-import leaderTafel from '@/images/leader/leader_tafel.jpg';
+import { Image } from "astro:assets";
+import leaderTafel from "@/images/leader/leader_tafel.jpg";
 ---
 
 <Layout
@@ -119,14 +119,25 @@ import leaderTafel from '@/images/leader/leader_tafel.jpg';
   </table>
   <br />
 
+  <h2>Mosttermine 2026</h2>
+  <p>Die Termine für 2026 sind</p>
+  <ul>
+    <li>Samstag, 12. September</li>
+    <li>Freitag, 18. September</li>
+    <li>Samstag, 19. September</li>
+    <li>Freitag, 25. September</li>
+    <li>Samstag, 26. September</li>
+
+    <li>Freitag, 02. Oktober</li>
+    <li>Samstag, 03. Oktober</li>
+    <li>Freitag, 09. Oktober</li>
+    <li>Samstag, 10. Oktober</li>
+    <li>Freitag, 23. Oktober</li>
+    <li>Samstag, 24. Oktober</li>
+  </ul>
+
   <h2>Mosttermin anfragen</h2>
-
-  <p>Die Termine für 2025 sind alle ausgebucht.</p>
-  <p>
-    Zu gegebener Zeit werden wir hier wieder die Termine für 2026 bekannt geben.
-  </p>
-
-  <!-- <div id="fehler-meldung" style="display:none; color:red; margin-bottom:1em;">
+  <div id="fehler-meldung" style="display:none; color:red; margin-bottom:1em;">
     Bitte überprüfen Sie Ihre Eingaben und versuchen Sie es erneut.
   </div>
   <script>
@@ -203,8 +214,7 @@ import leaderTafel from '@/images/leader/leader_tafel.jpg';
     <p>Abfüllung *</p>
     <p>
       <label
-        ><input type="radio" name="abfuellung" value="Beutel" required /> Beutel
-        (empfohlen)</label
+        ><input type="radio" name="abfuellung" value="Beutel" required /> Beutel (empfohlen)</label
       >
       &nbsp;&nbsp;
       <label
@@ -215,14 +225,23 @@ import leaderTafel from '@/images/leader/leader_tafel.jpg';
       <label for="bemerkung">Bemerkungen (optional)</label><br />
       <textarea id="bemerkung" name="bemerkung" rows="3" cols="40"></textarea>
     </p>
-    <p aria-hidden="true" style="position:absolute; left:-9999px; top:-9999px; height:0; overflow:hidden;">
+    <p
+      aria-hidden="true"
+      style="position:absolute; left:-9999px; top:-9999px; height:0; overflow:hidden;"
+    >
       <label for="website">Website (boo)</label>
-      <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+      <input
+        type="text"
+        id="website"
+        name="website"
+        tabindex="-1"
+        autocomplete="off"
+      />
     </p>
     <p>
       <button type="submit">Anfrage senden</button>
     </p>
-  </form> -->
+  </form>
 
   <hr />
   <p style="margin-top: 1rem">
