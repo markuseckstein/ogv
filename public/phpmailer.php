@@ -53,10 +53,12 @@ class SimpleSMTP
     /**
      * Sendet eine E-Mail via STARTTLS / AUTH LOGIN.
      *
+     * @param string|string[] $to Ein oder mehrere Empfänger
      * @throws RuntimeException bei Verbindungs- oder Protokollfehlern
      */
-    public function send(string $from, string $to, string $subject, string $body): void
+    public function send(string $from, string|array $to, string $subject, string $body): void
     {
+        $recipients = is_array($to) ? $to : [$to];
         // 1. Verbindung aufbauen
         $this->socket = fsockopen($this->host, $this->port, $errno, $errstr, 15);
         if ($this->socket === false) {
@@ -90,7 +92,9 @@ class SimpleSMTP
 
         // 8. Envelope
         $this->expect($this->sendCmd("MAIL FROM:<$from>"), '250');
-        $this->expect($this->sendCmd("RCPT TO:<$to>"), '250');
+        foreach ($recipients as $recipient) {
+            $this->expect($this->sendCmd("RCPT TO:<$recipient>"), '250');
+        }
 
         // 9. DATA
         $this->expect($this->sendCmd("DATA"), '354');
@@ -99,8 +103,10 @@ class SimpleSMTP
         $encodedSubject = '=?UTF-8?B?' . base64_encode($subject) . '?=';
         $encodedBody    = chunk_split(base64_encode($body));
 
+        $toHeader = implode(', ', array_map(fn(string $addr) => "<$addr>", $recipients));
+
         $message  = "From: <$from>\r\n";
-        $message .= "To: <$to>\r\n";
+        $message .= "To: $toHeader\r\n";
         $message .= "Subject: $encodedSubject\r\n";
         $message .= "MIME-Version: 1.0\r\n";
         $message .= "Content-Type: text/plain; charset=UTF-8\r\n";

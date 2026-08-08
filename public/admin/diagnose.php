@@ -133,7 +133,7 @@ if (file_exists($configPath)) {
     </tr>
     <tr>
       <th>MANAGER_EMAIL</th>
-      <td><?= defined('MANAGER_EMAIL') ? h(MANAGER_EMAIL) : '<span class="warn">nicht definiert</span>' ?></td>
+      <td><?= defined('MANAGER_EMAIL') ? h(implode(', ', (array) MANAGER_EMAIL)) : '<span class="warn">nicht definiert</span>' ?></td>
     </tr>
     <?php endif; ?>
   </table>
