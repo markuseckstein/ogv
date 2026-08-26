@@ -1,0 +1,77 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+interface Props {
+  post: CollectionEntry<'aktuelles'>;
+}
+
+export async function getStaticPaths() {
+  const posts = await getCollection('aktuelles');
+  return posts.map((post: CollectionEntry<'aktuelles'>) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+function formatDate(date: Date): string {
+  const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const year = date.getFullYear();
+  return `${day}.${month}.${year}`;
+}
+
+const teaserImage = post.data.teaserImage ?? '/images/veranstaltungen.jpg';
+const teaserPosition = post.data.teaserPosition ?? '50% 38%';
+---
+
+<Layout
+  title={post.data.title}
+  teaserImage={teaserImage}
+  teaserPosition={teaserPosition}
+  teaserAltText={post.data.title}
+>
+  <article>
+    <header class="post-header">
+      <p class="post-date">{formatDate(post.data.date)}</p>
+      <h1>{post.data.title}</h1>
+    </header>
+    <div class="post-content">
+      <Content />
+    </div>
+    <p class="back-link"><a href="/aktuelles">← Zurück zu Aktuelles</a></p>
+  </article>
+</Layout>
+
+<style lang="scss">
+  @use "../../styles/minima/variables" as *;
+
+  .post-header {
+    margin-bottom: $spacing-unit;
+  }
+
+  .post-date {
+    color: $grey-color;
+    font-size: $small-font-size;
+    margin: 0 0 calc($spacing-unit / 4);
+  }
+
+  .post-content {
+    margin-bottom: $spacing-unit;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: calc($spacing-unit / 2) 0;
+    }
+  }
+
+  .back-link {
+    margin-top: $spacing-unit;
+    font-size: $small-font-size;
+  }
+</style>

@@ -1,0 +1,67 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const posts = await getCollection('aktuelles');
+const sorted = posts.sort(
+  (a: CollectionEntry<'aktuelles'>, b: CollectionEntry<'aktuelles'>) =>
+    b.data.date.getTime() - a.data.date.getTime()
+);
+
+function formatDate(date: Date): string {
+  const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const year = date.getFullYear();
+  return `${day}.${month}.${year}`;
+}
+---
+
+<Layout
+  title="Aktuelles"
+  teaserImage="/images/veranstaltungen.jpg"
+  teaserPosition="50% 38%"
+  teaserAltText="Aktuelles vom OGV Pattenhofen-Altenthann"
+>
+  <h1>Aktuelles</h1>
+  {sorted.length === 0 ? (
+    <p>Noch keine Beiträge vorhanden.</p>
+  ) : (
+    <ul class="aktuelles-list">
+      {sorted.map((post: CollectionEntry<'aktuelles'>) => (
+        <li>
+          <span class="aktuelles-date">{formatDate(post.data.date)}</span>
+          <a href={`/aktuelles/${post.id}`}>{post.data.title}</a>
+        </li>
+      ))}
+    </ul>
+  )}
+</Layout>
+
+<style lang="scss">
+  @use "../../styles/minima/variables" as *;
+
+  .aktuelles-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      padding: calc($spacing-unit / 4) 0;
+      border-bottom: 1px solid $grey-color-light;
+      display: flex;
+      gap: calc($spacing-unit / 2);
+      align-items: baseline;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  .aktuelles-date {
+    white-space: nowrap;
+    color: $grey-color;
+    font-size: $small-font-size;
+    min-width: 6rem;
+  }
+</style>
