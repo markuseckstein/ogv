@@ -18,7 +18,7 @@
     "format": "prettier -w src/**/*"
   },
   "dependencies": {
-    "astro": "7.2.0",
+    "astro": "7.2.10",
     "date-fns": "4.4.0",
     "sass": "1.103.1",
     "sharp": "^0.35.3"
