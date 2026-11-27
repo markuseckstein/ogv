@@ -16,6 +16,7 @@ Static website for OGV Pattenhofen-Altenthann e.V. (a German fruit and garden as
 | `npm run build` | TypeScript check + production build |
 | `npm run typecheck` | TypeScript validation only (`astro check`) |
 | `npm run format` | Format code with Prettier |
+| `npm run format:check` | Check formatting (runs in PR builds) |
 | `npm run preview` | Preview production build locally |
 
 There are no tests configured.
