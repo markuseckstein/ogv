@@ -15,7 +15,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "typecheck": "astro check",
-    "format": "prettier -w src/**/*"
+    "format": "prettier -w \"src/**/*.{astro,ts,scss,css}\"",
+    "format:check": "prettier -c \"src/**/*.{astro,ts,scss,css}\""
   },
   "dependencies": {
     "astro": "7.4.13",
