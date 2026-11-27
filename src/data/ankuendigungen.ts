@@ -21,31 +21,20 @@ export interface Ankuendigung {
 
 export const ankuendigungen: Ankuendigung[] = [
   {
-    datum: "20.03.2026",
+    datum: "12.03.2027",
     titel: "Jahreshauptversammlung",
     uhrzeit: "19:00 Uhr",
     ort: 'Gasthaus „Weißes Kreuz", Altenthann',
-    hinweis: "Mit Neuwahl des Vorstandes",
   },
   {
-    datum: "27.03.2026",
-    titel: "Ortsrandsäuberung",
+    datum: "09.04.2027",
+    titel: "Flurreinigung",
     uhrzeit: "16:00 Uhr",
     ort: "Treffpunkt am Dorfweiher, Altenthann",
-    hinweis: 'Im Rahmen der „Kehrd wärd"-Aktion der Gemeinde Schwarzenbruck',
   },
   {
-    datum: "08.05.2026",
-    titel: "Kräuterwanderung mit Fr. Anita Schrödel",
-    uhrzeit: "Abfahrt 16:00 Uhr",
-    ort: "Treffpunkt am Weiher in Altenthann",
-    hinweis:
-      "Wanderung in Lindelburg (Oberdorf 5) ab 16:30 Uhr. Mitglieder und alle Naturfreunde herzlich willkommen!",
-  },
-  {
-    datum: "11.07.2026",
-    titel: "Sommerschnittkurs",
-    uhrzeit: "14:00 Uhr",
-    ort: "Obstwiese des OGV Winkelhaid",
+    datum: "12.09.2027",
+    titel: "Jubiläumsfeier zum 80-jährigen Bestehen des OGV",
+    ort: 'Gasthaus „Weißes Kreuz", Altenthann',
   },
 ];
