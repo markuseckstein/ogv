@@ -1,10 +1,10 @@
 ---
-import { parse, format } from 'date-fns';
-import { de } from 'date-fns/locale';
-import { ankuendigungen } from '../data/ankuendigungen';
+import { parse, format } from "date-fns";
+import { de } from "date-fns/locale";
+import { ankuendigungen } from "../data/ankuendigungen";
 
 function toIsoDate(datum: string): string {
-  const [day, month, year] = datum.split('.');
+  const [day, month, year] = datum.split(".");
   return `${year}-${month}-${day}`;
 }
 ---
@@ -14,20 +14,20 @@ function toIsoDate(datum: string): string {
     <h2>Nächste Veranstaltungen</h2>
     <ul class="ankuendigungen__liste">
       {ankuendigungen.map((a) => {
-        const date = parse(a.datum, 'dd.MM.yyyy', new Date());
-        const datumFormatiert = format(date, 'EEEE, d. MMMM yyyy', { locale: de });
+        const date = parse(a.datum, "dd.MM.yyyy", new Date());
+        const datumFormatiert = format(date, "EEEE, d. MMMM yyyy", {
+          locale: de,
+        });
         return (
           <li class="ankuendigung" data-date={toIsoDate(a.datum)}>
             <p class="ankuendigung__datum">{datumFormatiert}</p>
             <p class="ankuendigung__titel">{a.titel}</p>
             {(a.uhrzeit || a.ort) && (
               <p class="ankuendigung__details">
-                {[a.uhrzeit, a.ort].filter(Boolean).join(' · ')}
+                {[a.uhrzeit, a.ort].filter(Boolean).join(" · ")}
               </p>
             )}
-            {a.hinweis && (
-              <p class="ankuendigung__hinweis">{a.hinweis}</p>
-            )}
+            {a.hinweis && <p class="ankuendigung__hinweis">{a.hinweis}</p>}
           </li>
         );
       })}
@@ -40,24 +40,30 @@ function toIsoDate(datum: string): string {
 
 <script>
   const today = new Date();
-  const todayStart = new Date(today.getFullYear(), today.getMonth(), today.getDate()).getTime();
+  const todayStart = new Date(
+    today.getFullYear(),
+    today.getMonth(),
+    today.getDate(),
+  ).getTime();
 
-  const section = document.getElementById('ankuendigungen');
+  const section = document.getElementById("ankuendigungen");
   if (section) {
-    const items = Array.from(section.querySelectorAll<HTMLElement>('.ankuendigung[data-date]'));
+    const items = Array.from(
+      section.querySelectorAll<HTMLElement>(".ankuendigung[data-date]"),
+    );
     let visibleCount = 0;
 
-    items.forEach(item => {
-      const [year, month, day] = item.dataset.date!.split('-').map(Number);
+    items.forEach((item) => {
+      const [year, month, day] = item.dataset.date!.split("-").map(Number);
       if (new Date(year, month - 1, day).getTime() < todayStart) {
-        item.style.display = 'none';
+        item.style.display = "none";
       } else {
         visibleCount++;
       }
     });
 
     if (visibleCount === 0) {
-      section.style.display = 'none';
+      section.style.display = "none";
     }
   }
 </script>

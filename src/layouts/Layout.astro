@@ -1,8 +1,8 @@
 ---
-import '../styles/main.scss';
-import '../components/layout.scss';
-import { Picture } from 'astro:assets';
-import type { ImageMetadata } from 'astro';
+import "../styles/main.scss";
+import "../components/layout.scss";
+import { Picture } from "astro:assets";
+import type { ImageMetadata } from "astro";
 
 interface Props {
   title: string;
@@ -14,35 +14,41 @@ interface Props {
 
 const {
   title,
-  description = 'Obst- und Gartenbauverein Pattenhofen-Altenthann e.V.',
+  description = "Obst- und Gartenbauverein Pattenhofen-Altenthann e.V.",
   teaserImage,
-  teaserPosition = '50% 50%',
-  teaserAltText = 'Teaser Bild'
+  teaserPosition = "50% 50%",
+  teaserAltText = "Teaser Bild",
 } = Astro.props;
 
-const images = import.meta.glob<ImageMetadata>('../images/*.jpg', { eager: true, import: 'default' });
-const filename = teaserImage.split('/').pop();
+const images = import.meta.glob<ImageMetadata>("../images/*.jpg", {
+  eager: true,
+  import: "default",
+});
+const filename = teaserImage.split("/").pop();
 const imageSrc = images[`../images/${filename}`];
 if (!imageSrc) {
-  throw new Error(`Teaser image not found: "${teaserImage}". Add the file to src/images/.`);
+  throw new Error(
+    `Teaser image not found: "${teaserImage}". Add the file to src/images/.`,
+  );
 }
 
 const year = new Date().getFullYear();
 
 const menuLinks = [
-  { name: 'Vereinszweck', link: '/vereinszweck' },
-  { name: 'Kurzchronik', link: '/chronik' },
-  { name: 'Geräte', link: '/geraete' },
-  { name: 'Mosterei', link: '/mosterei' },
-  { name: 'Veranstaltungen', link: '/veranstaltungen' },
-  { name: 'Mitgliedschaft', link: '/mitgliedschaft' },
-  { name: 'Kontakt', link: '/kontakt' },
-  { name: 'Impressum', link: '/impressum' },
-  { name: 'Fotogalerie', link: '/fotogalerie' },
+  { name: "Vereinszweck", link: "/vereinszweck" },
+  { name: "Kurzchronik", link: "/chronik" },
+  { name: "Geräte", link: "/geraete" },
+  { name: "Mosterei", link: "/mosterei" },
+  { name: "Veranstaltungen", link: "/veranstaltungen" },
+  { name: "Mitgliedschaft", link: "/mitgliedschaft" },
+  { name: "Kontakt", link: "/kontakt" },
+  { name: "Impressum", link: "/impressum" },
+  { name: "Fotogalerie", link: "/fotogalerie" },
 ];
 
 // Normalize path by removing trailing slash (except for root)
-const currentPath = Astro.url.pathname === '/' ? '/' : Astro.url.pathname.replace(/\/$/, '');
+const currentPath =
+  Astro.url.pathname === "/" ? "/" : Astro.url.pathname.replace(/\/$/, "");
 ---
 
 <!doctype html>
@@ -65,11 +71,7 @@ const currentPath = Astro.url.pathname === '/' ? '/' : Astro.url.pathname.replac
           </a>
         </h1>
         <nav class="site-nav">
-          <input
-            type="checkbox"
-            id="nav-trigger"
-            class="nav-trigger"
-          />
+          <input type="checkbox" id="nav-trigger" class="nav-trigger" />
           <label for="nav-trigger">
             <span class="menu-icon">
               <svg viewBox="0 0 18 15" width="18px" height="15px">
@@ -92,7 +94,7 @@ const currentPath = Astro.url.pathname === '/' ? '/' : Astro.url.pathname.replac
             {menuLinks.map((link) => (
               <a
                 href={link.link}
-                class={`page-link ${currentPath === link.link ? 'page-link--active' : ''}`}
+                class={`page-link ${currentPath === link.link ? "page-link--active" : ""}`}
               >
                 {link.name}
               </a>
@@ -104,7 +106,7 @@ const currentPath = Astro.url.pathname === '/' ? '/' : Astro.url.pathname.replac
 
     <Picture
       src={imageSrc}
-      formats={['avif', 'webp']}
+      formats={["avif", "webp"]}
       widths={[400, 800, 1200, 1920]}
       sizes="100vw"
       class="teaser-image"
@@ -116,9 +118,7 @@ const currentPath = Astro.url.pathname === '/' ? '/' : Astro.url.pathname.replac
     </main>
 
     <footer class="site-footer">
-      <p class="footer-content">
-        &copy; {year} OGV Pattenhofen Altenthann
-      </p>
+      <p class="footer-content">&copy; {year} OGV Pattenhofen Altenthann</p>
     </footer>
   </body>
 </html>

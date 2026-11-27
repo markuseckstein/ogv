@@ -1,19 +1,21 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import CalendarSubscription from '../components/CalendarSubscription.astro';
-import { veranstaltungen } from '../data/veranstaltungen';
+import Layout from "../layouts/Layout.astro";
+import CalendarSubscription from "../components/CalendarSubscription.astro";
+import { veranstaltungen } from "../data/veranstaltungen";
 
 function parseDate(dateString: string) {
-  const [day, month, year] = dateString.split('.').map(x => parseInt(x));
+  const [day, month, year] = dateString.split(".").map((x) => parseInt(x));
   return new Date(year, month - 1, day).getTime();
 }
 
 function toIsoDate(datum: string): string {
-  const [day, month, year] = datum.split('.');
+  const [day, month, year] = datum.split(".");
   return `${year}-${month}-${day}`;
 }
 
-const sortedEvents = [...veranstaltungen].sort((a, b) => parseDate(a.datum) - parseDate(b.datum));
+const sortedEvents = [...veranstaltungen].sort(
+  (a, b) => parseDate(a.datum) - parseDate(b.datum),
+);
 ---
 
 <Layout
@@ -26,21 +28,16 @@ const sortedEvents = [...veranstaltungen].sort((a, b) => parseDate(a.datum) - pa
   <table id="eventsTable" style="margin-bottom: 1rem">
     {sortedEvents.map((event) => (
       <tr data-date={toIsoDate(event.datum)}>
-        <td style="white-space: nowrap; vertical-align: top;">
-          {event.datum}
-        </td>
+        <td style="white-space: nowrap; vertical-align: top;">{event.datum}</td>
         <td>{event.titel}</td>
       </tr>
     ))}
   </table>
 
-
   <button id="togglePastEvents" class="toggle-button">
-      Vergangene Veranstaltungen anzeigen
-    </button>
-  <div class="past-events-section" id="pastEventsSection">
-    
-  </div>
+    Vergangene Veranstaltungen anzeigen
+  </button>
+  <div class="past-events-section" id="pastEventsSection"></div>
 
   <p>
     Weitere Veranstaltungen die noch nicht terminiert sind werden rechtzeitig in
@@ -87,32 +84,40 @@ const sortedEvents = [...veranstaltungen].sort((a, b) => parseDate(a.datum) - pa
 
 <script>
   const today = new Date();
-  const todayStart = new Date(today.getFullYear(), today.getMonth(), today.getDate()).getTime();
+  const todayStart = new Date(
+    today.getFullYear(),
+    today.getMonth(),
+    today.getDate(),
+  ).getTime();
 
-  const rows = Array.from(document.querySelectorAll<HTMLTableRowElement>('#eventsTable tr[data-date]'));
+  const rows = Array.from(
+    document.querySelectorAll<HTMLTableRowElement>(
+      "#eventsTable tr[data-date]",
+    ),
+  );
   const pastRows: HTMLTableRowElement[] = [];
 
-  rows.forEach(row => {
-    const [year, month, day] = row.dataset.date!.split('-').map(Number);
+  rows.forEach((row) => {
+    const [year, month, day] = row.dataset.date!.split("-").map(Number);
     if (new Date(year, month - 1, day).getTime() < todayStart) {
-      row.classList.add('past-event');
+      row.classList.add("past-event");
       pastRows.push(row);
     }
   });
 
-  const pastSection = document.getElementById('pastEventsSection');
+  const pastSection = document.getElementById("pastEventsSection");
   if (pastRows.length > 0 && pastSection) {
-    pastSection.style.display = '';
+    pastSection.style.display = "";
   }
 
-  const toggleButton = document.getElementById('togglePastEvents');
+  const toggleButton = document.getElementById("togglePastEvents");
   if (toggleButton) {
-    toggleButton.addEventListener('click', () => {
-      const isShowing = toggleButton.textContent?.includes('verbergen');
-      pastRows.forEach(row => row.classList.toggle('visible', !isShowing));
+    toggleButton.addEventListener("click", () => {
+      const isShowing = toggleButton.textContent?.includes("verbergen");
+      pastRows.forEach((row) => row.classList.toggle("visible", !isShowing));
       toggleButton.textContent = isShowing
-        ? 'Vergangene Veranstaltungen anzeigen'
-        : 'Vergangene Veranstaltungen verbergen';
+        ? "Vergangene Veranstaltungen anzeigen"
+        : "Vergangene Veranstaltungen verbergen";
     });
   }
 </script>

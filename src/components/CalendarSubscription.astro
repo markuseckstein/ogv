@@ -14,7 +14,10 @@ const { icsUrl, title = "Kalender abonnieren" } = Astro.props;
     automatisch Benachrichtigungen bei neuen oder geänderten Terminen.
   </p>
   <div class="calendar-subscription__actions">
-    <button id="copyCalendarUrl" title="Kopiert die Kalender-URL zum Abonnieren">
+    <button
+      id="copyCalendarUrl"
+      title="Kopiert die Kalender-URL zum Abonnieren"
+    >
       URL kopieren
     </button>
     <a href={icsUrl} download={icsUrl.split("/").pop()}>
